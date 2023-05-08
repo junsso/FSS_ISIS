@@ -1,0 +1,1015 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta http-equiv="imagetoolbar" content="no" />
+		<title>☞ ISIS 통합 관리 시스템 ☜</title>
+		<link rel="stylesheet" href="/fss/html/cm/css/jquery-ui.css"/>
+		<link rel="stylesheet" href="/fss/html/cm/css/contents.css"/>
+		<script src="/fss/html/cm/js/jquery-1.9.1.js" charset="euc-kr"></script>
+		<script src="/fss/html/cm/js/jquery-ui.js" charset="euc-kr"></script>
+		<script src="/fss/html/cm/js/jquery.cookie.js" charset="euc-kr"></script>
+		<script type="text/javascript">
+			$(function() {
+				//마우스 오버 이벤트 처리 상태(처리 중 : true, 이벤트 없음 : false)
+				var eff1 = false;
+		
+				//카테고리별 div object
+				var cat_div_arr = new Array(2);
+				cat_div_arr[0] = $("#cat_bis");
+				cat_div_arr[1] = $("#cat_area");
+				//cat_div_arr[1] = $("#cat_private");
+				//cat_div_arr[2] = $("#cat_area");
+		
+				//카테고리별 contents open div object
+				var cntn_open_div_arr = new Array(2);
+				cntn_open_div_arr[0] = $("#cat_bis_content");
+				cntn_open_div_arr[1] = $("#cat_area_content");
+
+				var title_open_div_arr = new Array(2);
+				title_open_div_arr[0] = $("#cat_bis_title");
+				title_open_div_arr[1] = $("#cat_area_title");
+		
+				//카테고리별 contents close div object
+				var cntn_close_div_arr = new Array(2);
+				cntn_close_div_arr[0] = $("#cat_bis_content_close");
+				cntn_close_div_arr[1] = $("#cat_area_content_close");
+
+				var title_close_div_arr = new Array(2);
+				title_close_div_arr[0] = $("#cat_bis_title_close");
+				title_close_div_arr[1] = $("#cat_area_title_close");
+		
+				//카테고리별 div left 위치 값
+				var cat_div_pos_arr = new Array(2);
+		
+				var openwidth = 926; 
+				var closewidth = 71;
+				var gab = 3;
+				var favorWidth = 106;
+		
+				var toggleOpenSpeed = 500;
+				var toggleCloseSpeed = 0;
+		
+				var faver_visibility = true;
+		
+				//최초 open div 설정 및 각 div 위치 설정
+				function initDiv() {
+					if (faver_visibility == true) {
+						favorWidth = 106;
+						$("#favor_div").css('display', 'inline');
+						$("#close_favor").css('display', 'inline');
+						$("#open_favor").css('display', 'none');
+					} else {
+						favorWidth = 26;
+						$("#favor_div").css('display', 'none');
+						$("#open_favor").css('display', 'inline');
+						$("#close_favor").css('display', 'none');
+					}
+		
+					var openCategory = $.cookie('isismain_open_category');
+					var openCategoryIndex = 0;
+					if (openCategory == '' || openCategory == null) {
+						openCategoryIndex = 0;
+					} else {
+						openCategoryIndex = parseInt(openCategory);
+					}
+		
+					//위치 설정
+					setPosition(openCategoryIndex);
+		
+					//open 설정
+					if (openCategoryIndex == 0) {
+						closeDiv(1);
+						openDiv(0);						
+					} else if (openCategoryIndex == 1) {
+						closeDiv(0);
+						openDiv(1);
+					} 
+
+					var openCategory = $.cookie('isismain_open_category');
+					
+					var closeDivIndex = 1;
+					var openCategoryIndex = 0;
+					if (openCategory == '' || openCategory == null) {
+						openCategoryIndex = 0;
+					} else {
+						openCategoryIndex = parseInt(openCategory);
+					}
+					var bgImg = '';
+//					if (openCategoryIndex == 0) {
+//						bgImg = "/fss/html/cm/images/business_title_bg_ov.gif";
+//					} else if (openCategoryIndex == 1) {
+//						bgImg = "/fss/html/cm/images/area_title_bg_ov.gif";
+//					}
+					var bgImg2 = '';
+//					if (openCategoryIndex == 0) {
+//						bgImg2 = "/fss/html/cm/images/business_bg_ov.gif";
+//					} else if (openCategoryIndex == 1) {
+//						bgImg2 = "/fss/html/cm/images/area_bg_ov.gif";
+//						closeDivIndex = 0;
+//					}
+//					cat_div_arr[openCategoryIndex].css('background-image', "url('"
+//							+ bgImg2 + "')");						
+//					title_open_div_arr[openCategoryIndex].css('background-image', "url('"
+//							+ bgImg + "')");
+
+//					if (closeDivIndex == 0) {
+//						bgImg = "/fss/html/cm/images/business_title_bg.gif";
+//					} else if (closeDivIndex == 1) {
+//						bgImg = "/fss/html/cm/images/area_title_bg.gif";
+//					}
+//					cat_div_arr[closeDivIndex].css('background-image', "url('/fss/html/cm/images/business_bg_ov.gif')");	
+//					title_close_div_arr[closeDivIndex].css('background-image', "url('" + bgImg
+//							+ "')");
+				}			
+		
+				//화면초기화
+				initDiv();
+		
+				//카테고리별 div 위치 설정
+				function setPosition(openCategoryIndex) {
+					if (faver_visibility == true) {
+						favorWidth = 216;
+					} else {
+						favorWidth = 26;
+					}
+					if (openCategoryIndex == 0) {
+						cat_div_pos_arr[0] = favorWidth;
+						cat_div_pos_arr[1] = favorWidth + openwidth+gab;
+					} else if (openCategoryIndex == 1) {
+						cat_div_pos_arr[0] = favorWidth;
+						cat_div_pos_arr[1] = favorWidth + closewidth+gab;
+					} 
+				}
+		
+				//div open
+				function openDiv(openDivIndex) {
+					var bgImg = "";
+					var bgImg2 = "";
+					if (cat_div_arr[openDivIndex].hasClass("closeClass") == true) {
+//						if (openDivIndex == 0) {
+//							bgImg = "/fss/html/cm/images/business_title_bg_ov.gif";
+//						} else if (openDivIndex == 1) {
+//							bgImg = "/fss/html/cm/images/area_title_bg_ov.gif";
+//						}
+//						if (openDivIndex == 0) {
+//							bgImg2 = "/fss/html/cm/images/business_bg_ov.gif";
+//						} else if (openDivIndex == 1) {
+//							bgImg2 = "/fss/html/cm/images/area_bg_ov.gif";
+//						}
+						eff1 = true;
+						cntn_close_div_arr[openDivIndex].css('display', 'none');
+						cntn_open_div_arr[openDivIndex].css('display', 'inline');
+						title_close_div_arr[openDivIndex].css('display', 'none');
+						title_open_div_arr[openDivIndex].css('display', 'inline');
+						cat_div_arr[openDivIndex].css('left',
+								cat_div_pos_arr[openDivIndex] + 'px');
+//						cat_div_arr[openDivIndex].css('background-image', "url('"
+//								+ bgImg2 + "')");							
+//						title_open_div_arr[openDivIndex].css('background-image', "url('"
+//								+ bgImg + "')");
+						cat_div_arr[openDivIndex].switchClass("closeClass",
+								"openClass", toggleOpenSpeed, "", function() {
+									eff1 = false;
+									closeDiv2(openDivIndex);
+								});
+					} else {
+						cntn_close_div_arr[openDivIndex].hide('fast');
+					}
+				}
+				
+				function closeDiv2(openDivIndex){
+					if(openDivIndex == 0){
+						if(cat_div_arr[1].hasClass("openClass") == true){
+							closeDiv(1);
+						}
+					}else if(openDivIndex == 1){
+						if(cat_div_arr[0].hasClass("openClass") == true){
+							closeDiv(0);
+						}
+					}
+				}
+				
+				function moveDiv(moveDivIdx){
+					cat_div_arr[moveDivIdx].css('left',
+							cat_div_pos_arr[moveDivIdx] + 'px');
+				}
+				
+				//div close
+				function closeDiv(closeDivIndex) {
+					var bgImg = "";
+//					if (closeDivIndex == 0) {
+//						bgImg = "/fss/html/cm/images/business_title_bg.gif";
+//					} else if (closeDivIndex == 1) {
+//						bgImg = "/fss/html/cm/images/area_title_bg.gif";
+//					}
+					cntn_open_div_arr[closeDivIndex].css('display', 'none');
+					cntn_close_div_arr[closeDivIndex].css('display', 'inline');
+					title_open_div_arr[closeDivIndex].css('display', 'none');
+					title_close_div_arr[closeDivIndex].css('display', 'inline');
+					cat_div_arr[closeDivIndex].css('left',
+							cat_div_pos_arr[closeDivIndex] + 'px');
+//					cat_div_arr[closeDivIndex].css('background-image', "url('/fss/html/cm/images/business_bg_ov.gif')");	
+//					title_close_div_arr[closeDivIndex].css('background-image', "url('" + bgImg
+//							+ "')");
+					cat_div_arr[closeDivIndex].switchClass("openClass", "closeClass",
+							toggleCloseSpeed, "", function() {
+							});
+				}
+				
+				$("#cat_bis").bind('click', function(e) {
+					var openCategory = $.cookie('isismain_open_category');
+		
+					if (openCategory == '0') {
+						return;
+					}
+		
+					if (eff1 == true)
+						return;
+
+					$.cookie('isismain_open_category', 0);
+					var openCategoryIndex = 1;
+					if (openCategory == '' || openCategory == null) {
+						openCategoryIndex = 1;
+					} else {
+						openCategoryIndex = parseInt(openCategory);
+					}
+					setPosition(0);
+					closeDiv(1);
+					openDiv(0);
+					initCatHeight();
+					bottoPos();
+
+//					var bish = document.getElementById("cat_bis_content_table").offsetHeight;
+					
+//					document.getElementById("cat_area_content_close_table").style.height=(bish-1)+'px';
+				});
+				$("#cat_area").bind('click', function(e) {
+					var openCategory = $.cookie('isismain_open_category');
+		
+					if (openCategory == '1') {
+						return;
+					}
+		
+					if (eff1 == true)
+						return;
+
+					$.cookie('isismain_open_category', 1);
+					var openCategoryIndex = 1;
+					if (openCategory == '' || openCategory == null) {
+						openCategoryIndex = 1;
+					} else {
+						openCategoryIndex = parseInt(openCategory);
+					}
+
+					setPosition(1);
+
+					closeDiv(0);
+					openDiv(1);
+					initCatHeight();
+					bottoPos();
+//					var areah = document.getElementById("cat_area_content_table").offsetHeight;					
+//					document.getElementById("cat_bis_content_close_table").style.height=(areah-1)+'px';
+				});
+				
+				$("#open_favor").click(function() {
+					faver_visibility = true;
+					$("#favor_div").css('display', 'inline');
+					$("#close_favor").css('display', 'inline');
+					$("#open_favor").css('display', 'none');
+					var openCategory = $.cookie('isismain_open_category');
+					var openCategoryIndex = 1;
+					if (openCategory == '' || openCategory == null) {
+						openCategoryIndex = 1;
+					} else {
+						openCategoryIndex = parseInt(openCategory);
+					}
+		
+					//위치 설정
+					setPosition(openCategoryIndex);
+//					$("#cat_link").css('left','216px');
+					cat_div_arr[0].css('left', cat_div_pos_arr[0] + 'px');
+					cat_div_arr[1].css('left', cat_div_pos_arr[1] + 'px');
+				});
+		
+				$("#close_favor").click(function() {
+					faver_visibility = false;
+					$("#favor_div").css('display', 'none');
+					$("#open_favor").css('display', 'inline');
+					$("#close_favor").css('display', 'none');
+					
+					var openCategory = $.cookie('isismain_open_category');
+					var openCategoryIndex = 1;
+					if (openCategory == '' || openCategory == null) {
+						openCategoryIndex = 1;
+					} else {
+						openCategoryIndex = parseInt(openCategory);
+					}
+		
+					//위치 설정
+					setPosition(openCategoryIndex);
+//					$("#cat_link").css('left','25px');
+		
+					cat_div_arr[0].css('left', cat_div_pos_arr[0] + 'px');
+					cat_div_arr[1].css('left', cat_div_pos_arr[1] + 'px');
+				});
+		
+				$("div").click(function(event) {
+					if (this.id != 'more')
+						return;
+					var dialog_height = 555;
+					//이벤트가 발생한 more버튼의 상위 div 위치
+					var s_cat_div = $(this).parent().parent();
+					var s_cat_div_cont = s_cat_div.children('#cont');
+					var s_cat_div_left = s_cat_div.offset().left;
+					var s_cat_div_width = s_cat_div.width();
+					
+					var clone_div_top = (s_cat_div.parent().offset().top) + 5;
+					//div clone
+					var clone_div = s_cat_div_cont.clone(true);
+					clone_div.css("top", "5px");
+					
+					//참조 :jquery-ui.js 의 widget( "ui.dialog"
+					//css  :jquery-ui.css
+					clone_div.dialog({
+						disabled : false,
+						autoOpen : true,
+						closeOnExcape : true,
+						draggable : false,
+						height : dialog_height,
+						width : s_cat_div_width,
+						position : [ s_cat_div_left, clone_div_top ],
+						modal : false,
+						title : this.title
+					});
+				});	
+			});
+				
+			function alertLinkErr(msg) {
+				alert(msg);
+			}
+			
+			function goLink(url){		
+				var frm = document.mainCntnForm;
+				frm.target="hiddenFram2";
+				frm.redirectUrl.value = url;
+				frm.action="/fss/html/cm/login/miAutoSession.jsp";
+				frm.submit();
+			    //window.open(url,'link'
+			    //	, 'toolbar=yes, menubar=yes,location=yes, scrollbars=yes, resizable=yes, width=1024, height=800');
+			}
+			function bottoPos(){
+				var openCategory = $.cookie('isismain_open_category');
+				var openCategoryIndex = 0;
+				if (openCategory == '' || openCategory == null) {
+					openCategoryIndex = 0;
+				} else {
+					openCategoryIndex = parseInt(openCategory);
+				}
+				
+				var bish = document.getElementById("cat_bis_content").offsetHeight;	
+				var areah = document.getElementById("cat_area_content").offsetHeight;	
+				var top = areah+70;
+				if(openCategoryIndex==0){
+					top = (bish+70);
+					if(top<300){
+						top = (areah+70);
+					}
+				}else {
+					top = (areah+70);
+					if(top<300){
+						top = (bish+70);
+					}
+				}
+//				$("#cat_link").css('top',top + 'px');
+			}
+			
+			function initCatHeight(){
+				var bizNms = "sp,ex,iv,cp,mp,gm"; 
+				var areaNms = "bk,nb,st,is,zc,mp,cm";
+				
+				var openCategory = $.cookie('isismain_open_category');
+				var openCategoryIndex = 0;
+				if (openCategory == '' || openCategory == null) {
+					openCategoryIndex = 0;
+				} else {
+					openCategoryIndex = parseInt(openCategory);
+				}
+
+				//open 설정
+				if (openCategoryIndex == 0) {
+					var bizOpen = $.cookie('isis_main_cat_biz_open');
+					if(bizOpen!=null && bizOpen != ''){
+						var cats = bizOpen.split(',');
+						
+						for(var c=0; c<cats.length; c++){
+							var cat = cats[c].split('^');
+							if(cat[1] == '0'){
+								if(bizNms.indexOf(cat[0]) >= 0){
+									changeHeight('cntn_biz_', cat[0], '0');
+								}
+							}else {
+								var h = document.getElementById("cntn_biz_"+cat[0]+"_table").offsetHeight;
+								if(h>20){
+									document.getElementById("cntn_biz_titl_"+cat[0]+"_table").style.height = (h-10)+'px';
+								}
+								if(h<=80){
+									$("#cntn_biz_img_close_"+cats[c]).css('display', 'none');
+									$("#cntn_biz_img_open_"+cats[c]).css('display', 'none');
+								}
+							}
+						}
+					}else {
+						var cats = bizNms.split(',');
+						for(var c=0; c<cats.length; c++){
+							var h = document.getElementById("cntn_biz_"+cats[c]+"_table").offsetHeight;
+							if(h>20){
+								document.getElementById("cntn_biz_titl_"+cats[c]+"_table").style.height = (h-10)+'px';
+							}
+							if(h<=80){
+								$("#cntn_biz_img_close_"+cats[c]).css('display', 'none');
+								$("#cntn_biz_img_open_"+cats[c]).css('display', 'none');
+							}
+						}
+					}
+					
+				} else if (openCategoryIndex == 1) {
+					var areaOpen = $.cookie('isis_main_cat_area_open');
+					if(areaOpen!=null && areaOpen!=''){
+						var cats = areaOpen.split(',');
+						
+						for(var c=0; c<cats.length; c++){
+							var cat = cats[c].split('^');
+							if(cat[1] == '0'){
+								if(areaNms.indexOf(cat[0]) >= 0){
+									changeHeight('cntn_area_', cat[0], '0');
+								}
+							}else {
+								var h = document.getElementById("cntn_area_"+cat[0]+"_table").offsetHeight;
+								if(h>20){
+									document.getElementById("cntn_area_titl_"+cat[0]+"_table").style.height = (h-10)+'px';
+								}
+								if(h<=80){
+									$("#cntn_area_img_close_"+cats[c]).css('display', 'none');
+									$("#cntn_area_img_open_"+cats[c]).css('display', 'none');
+								}
+							}
+						}
+					}else {
+						var cats = areaNms.split(',');
+						for(var c=0; c<cats.length; c++){
+							var h = document.getElementById("cntn_area_"+cats[c]+"_table").offsetHeight;
+							if(h>20){
+								document.getElementById("cntn_area_titl_"+cats[c]+"_table").style.height = (h-10)+'px';
+							}
+							if(h<=80){
+								$("#cntn_area_img_close_"+cats[c]).css('display', 'none');
+								$("#cntn_area_img_open_"+cats[c]).css('display', 'none');
+							}
+						}
+					}
+				}
+				try{
+					var openCategory = $.cookie('isismain_open_category');
+					var openCategoryIndex = 0;
+					if (openCategory == '' || openCategory == null) {
+						openCategoryIndex = 0;
+					} else {
+						openCategoryIndex = parseInt(openCategory);
+					}
+//					if(openCategoryIndex == 0){
+//						var h = document.getElementById("cat_bis_content_table").offsetHeight;
+//						if(h>0)
+//							document.getElementById("cat_area_content_close_table").style.height=(h-1)+'px';
+//					}else {
+//						var h = document.getElementById("cat_area_content_table").offsetHeight;
+//						if(h>0)
+//							document.getElementById("cat_bis_content_close_table").style.height=(h-1)+'px';
+//					}
+				} catch(e){
+					
+				}
+				bottoPos();
+			}
+			
+			function changeHeight(objNm, cat, chgType){	
+				var openCategory = $.cookie('isismain_open_category');	
+				var openCategoryIndex = 0;
+				if (openCategory == '' || openCategory == null) {
+					openCategoryIndex = 0;
+				} else {
+					openCategoryIndex = parseInt(openCategory);
+				}
+				if(chgType == '0'){
+					var h = document.getElementById(objNm+cat+"_table").offsetHeight;
+					if(h>80){
+						document.getElementById(objNm+cat).style.height='75px';
+						h=75;
+						$("#"+objNm+"img_close_"+cat).css('display', 'none');
+						$("#"+objNm+"img_open_"+cat).css('display', 'inline');
+					}else {
+						$("#"+objNm+"img_close_"+cat).css('display', 'none');
+						$("#"+objNm+"img_open_"+cat).css('display', 'none');
+					}
+					document.getElementById(objNm+"titl_"+cat+"_table").style.height = (h-10)+'px';
+				}else {
+					var h = document.getElementById(objNm+cat+"_table").offsetHeight;
+					document.getElementById(objNm+cat).style.height=(h)+'px';
+					
+					$("#"+objNm+"img_close_"+cat).css('display', 'inline');
+					$("#"+objNm+"img_open_"+cat).css('display', 'none');
+					document.getElementById(objNm+"titl_"+cat+"_table").style.height = (h-10)+'px';
+				}
+				
+				var bish = document.getElementById("cat_bis_content_table").offsetHeight;
+				var areah = document.getElementById("cat_area_content_table").offsetHeight;
+				
+//				document.getElementById("cat_area_content_close_table").style.height=(bish>0?bish-1:bish)+'px';
+//				document.getElementById("cat_bis_content_close_table").style.height=(areah>0?areah-1:areah)+'px';
+								
+				var bish = document.getElementById("cat_bis_content").offsetHeight;	
+				var areah = document.getElementById("cat_area_content").offsetHeight;	
+				
+				if(openCategoryIndex==0){
+//					$("#cat_link").css('top',(bish+70) + 'px');
+
+					var bizOpen = $.cookie('isis_main_cat_biz_open');
+					var cattt = '';
+					if(bizOpen != null && bizOpen != ''){
+						var catarr = bizOpen.split(',');
+						var existCat = false;
+						for(var c=0; c<catarr.length; c++){
+							var cats = catarr[c].split('^');
+							if(cats[0] == cat){
+								existCat = true;
+								catarr[c] = cat+'^'+chgType;
+							}
+							if(c>0) cattt+=',';
+							cattt += catarr[c];
+						}
+						if(existCat == false){
+							cattt += ','+cat+'^'+chgType;
+						}
+					}else {
+						cattt = cat+'^'+chgType;
+					}
+					$.cookie('isis_main_cat_biz_open', cattt);
+				}else {
+//					$("#cat_link").css('top',(areah+70) + 'px');
+
+					var areaOpen = $.cookie('isis_main_cat_area_open');
+					var cattt = '';
+					if(areaOpen != null && areaOpen != ''){
+						var catarr = areaOpen.split(',');
+
+						var existCat = false;
+						for(var c=0; c<catarr.length; c++){
+							var cats = catarr[c].split('^');
+							if(cats[0] == cat){
+								existCat = true;
+								catarr[c] = cat+'^'+chgType;
+							}
+							if(c>0) cattt+=',';
+							cattt += catarr[c];
+						}
+						if(existCat == false){
+							cattt += ','+cat+'^'+chgType;
+						}
+					}else {
+						cattt = cat+'^'+chgType;
+					}
+					$.cookie('isis_main_cat_area_open', cattt);
+				}
+			}
+			
+			function getCurrentCat(){
+				var openCategory = $.cookie('isismain_open_category');
+				var openCategoryIndex = 1;
+				if (openCategory == '' || openCategory == null) {
+					openCategoryIndex = 1;
+				} else {
+					openCategoryIndex = parseInt(openCategory);
+				}
+				return openCategoryIndex;
+			}
+			
+			function moveCntn(gbn, category, moveType){
+				var cookieNm = '';
+				var bizOrdr = 'SP,EX,IV,CP,MP,GM';
+				var areaOrdr = 'BK,NB,ST,IS,ZC,MP,CM';
+				var baseOrdr = '';
+				if(category == 'biz'){
+					cookieNm = 'isis_main_cat_biz_ordr';
+					baseOrdr = bizOrdr;
+				}else {
+					cookieNm = 'isis_main_cat_area_ordr';
+					baseOrdr = areaOrdr;
+				}
+				
+				var ordr = getCookie(cookieNm);
+				if (ordr == '' || ordr == null) {
+					ordr = baseOrdr;
+				}
+				var ordrArr = ordr.split(',');
+				var curIdx = 0;
+				for(var i=0; i<ordrArr.length; i++){
+					if(ordrArr[i].toLowerCase() == gbn.toLowerCase()){
+						curIdx = i;
+						break;
+					}
+				}
+				
+				var moveIdx = curIdx;
+				if('up' == moveType){
+					moveIdx = moveIdx-1;
+				}else {
+					moveIdx = moveIdx+1;
+				}
+
+				if(moveIdx<0 || moveIdx>=(ordrArr.length-1)){
+					return;
+				}
+				
+				var tgCatNm = ordrArr[moveIdx];
+				
+				ordrArr[curIdx] = tgCatNm;
+				ordrArr[moveIdx] = gbn;
+				ordr = '';
+				for(var i=0; i<ordrArr.length; i++){
+					if(i>0){
+						ordr += ',';
+					}	
+					ordr += ordrArr[i];
+				}			
+				//setCoolkie(cookieNm, ordr);
+				// jkp
+				$.cookie(cookieNm, ordr, {expires:15, domain:".fss.or.kr", path:"/"});
+				//////////////////////////////////////////////////////////////
+
+				setCoolkie("isis_main_sch_sys_nm", "");
+				var frm = document.mainCntnForm;
+				frm.target="_self";
+				frm.action="/fss/fw/cm/main/MainController.unitSystemMenuList.do";
+				frm.submit();
+			}
+			
+			function setViewType(obj, gbn, viewType){
+				var checkVal = '1';
+				if(viewType == 'view'){
+					checkVal = '0';
+				}
+				if(gbn == 'auth'){
+					setCoolkie("isis_main_view_type_auth", checkVal);
+				}else {
+					setCoolkie("isis_main_view_type_old", checkVal);
+				}
+
+
+				setCoolkie("isis_main_sch_sys_nm", "");
+				var frm = document.mainCntnForm;
+				frm.target="_self";
+				frm.action="/fss/fw/cm/main/MainController.unitSystemMenuList.do";
+				frm.submit();
+			}
+
+			function setOrdered(ordrType){
+				setCoolkie("isis_main_ordr_type", ordrType);
+
+				setCoolkie("isis_main_sch_sys_nm", "");
+				var frm = document.mainCntnForm;
+				frm.ORDERED.value=ordrType;
+				frm.target="_self";
+				frm.action="/fss/fw/cm/main/MainController.unitSystemMenuList.do";
+				frm.submit();
+			}
+			function searchSystem(schnm){
+				setCoolkie("isis_main_sch_sys_nm", schnm);
+				var frm = document.mainCntnForm;
+				frm.target="_self";
+				frm.action="/fss/fw/cm/main/MainController.unitSystemMenuList.do";
+				frm.submit();
+			}
+			
+			function searchSystem2(){
+				var schnm = document.getElementById("tx_schNm1").value;
+				searchSystem(schnm);
+			}
+			function searchSystem3(){
+				var schnm = document.getElementById("tx_schNm2").value;
+				searchSystem(schnm);
+			}
+			
+			function searchOnkeydown(e, obj){
+				var key;
+				if(window.event){
+					key = window.event.keyCode;
+				}else {
+					key = e.which;
+				}
+				
+				if(key == 13){
+					//searchSystem(obj.value);
+				}else {
+				}
+			}
+			var preFindStr = "";
+			function findStrBykey(obj){
+				var str = obj.value;
+				if(str.length==0){
+					findstr(preFindStr, '1');
+					return;
+				}
+				
+				findstr(preFindStr, '1');
+				findstr(str, '0');
+				preFindStr = str;
+			}
+			
+			function checkFindStr(str){
+				var alpha="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz";
+				
+				for(var i=0; i<str.length; i++){
+					var chr = str.charAt(i);
+					if (alpha.indexOf(chr) > -1){
+						continue;
+					}else {
+						chr = escape(chr);
+						if(chr.charAt(1) =='u'){
+							chr = chr.substr(2, chr.length-1);
+							if(chr<'AC00' || chr>'D7A3'){
+								return false;
+							}
+						}
+					}
+				}
+				return true;
+			}
+			
+			function getCookie(cookieNm){
+				return $.cookie(cookieNm);
+			}
+			
+			function setCoolkie(cookieNm, value){
+				$.cookie(cookieNm, value);
+			}
+			
+			function clearFindStr(obj){
+				//findstr(obj.value, '1');
+			}
+			
+			function findstr(str, gbn){
+				findInPage(str, gbn);				
+			}
+			
+			function findTxtFocusIn(obj){
+				var objVal = obj.value;
+				
+				if('직접입력' == objVal){
+					obj.value='';
+				}
+			}
+			function findTxtFocusOut(obj){
+				var objVal = obj.value;
+				
+				if('' == objVal){
+					obj.value='직접입력';
+				}
+			}
+			
+			var isFirst_biz = 'Y';
+			var isFirst_area = 'Y';
+			var org_cont_biz = new Array(10);
+			var org_cont_area = new Array(11);
+			var bizOrdrArr = new Array(10); 
+			bizOrdrArr[0] = 'sp';
+			bizOrdrArr[1] = 'ex';
+			bizOrdrArr[2] = 'iv';
+			bizOrdrArr[3] = 'cp';
+			bizOrdrArr[4] = 'mp';
+			bizOrdrArr[5] = 'gm';
+			bizOrdrArr[6] = 'biz_auto_find_div';
+//			bizOrdrArr[7] = 'cat_link';
+			bizOrdrArr[8] = 'cat_area_content_close';
+			bizOrdrArr[9] = 'favor_div';
+			
+			
+			var areaOrdrArr = new Array(10);
+			areaOrdrArr[0] = 'bk';
+			areaOrdrArr[1] = 'nb';
+			areaOrdrArr[2] = 'is';
+			areaOrdrArr[3] = 'zc';
+			areaOrdrArr[4] = 'mp';
+			areaOrdrArr[5] = 'cm';
+			areaOrdrArr[6] = 'st';
+			areaOrdrArr[7] = 'area_auto_find_div';
+//			areaOrdrArr[8] = 'cat_link';
+			areaOrdrArr[9] = 'cat_bis_content_close';
+			areaOrdrArr[10] = 'favor_div';
+			
+
+			function getOrgContn(){				
+				var catIdx = getCurrentCat();
+				if(catIdx == 0){
+					for(var i=0; i<6; i++){
+						org_cont_biz[i] = document.getElementById("cntn_biz_"+bizOrdrArr[i]).innerHTML;
+					}
+					org_cont_biz[6] = document.getElementById("biz_auto_find_div").innerHTML;
+//					org_cont_biz[7] = document.getElementById("cat_link").innerHTML;
+					org_cont_biz[8] = document.getElementById("cat_area_content_close").innerHTML;
+					org_cont_biz[9] = document.getElementById("favor_div").innerHTML;
+				}else {
+					for(var i=0; i<7; i++){
+						org_cont_area[i] = document.getElementById("cntn_area_"+areaOrdrArr[i]).innerHTML;
+					}
+					org_cont_area[7] = document.getElementById("area_auto_find_div").innerHTML;
+//					org_cont_area[8] = document.getElementById("cat_link").innerHTML;
+					org_cont_area[9] = document.getElementById("cat_bis_content_close").innerHTML;
+					org_cont_area[10] = document.getElementById("favor_div").innerHTML;
+				}
+			}
+			
+			function setOrgContn(){
+				var catIdx = getCurrentCat();
+				if(catIdx == 0){
+					for(var i=0; i<6; i++){
+						 document.getElementById("cntn_biz_"+bizOrdrArr[i]).innerHTML = org_cont_biz[i];
+					}
+					document.getElementById("biz_auto_find_div").innerHTML=org_cont_biz[6];
+//					document.getElementById("cat_link").innerHTML=org_cont_biz[7];
+					document.getElementById("cat_area_content_close").innerHTML=org_cont_biz[8];
+					document.getElementById("favor_div").innerHTML=org_cont_biz[9];
+				}else {
+					for(var i=0; i<7; i++){
+						document.getElementById("cntn_area_"+areaOrdrArr[i]).innerHTML = org_cont_area[i];
+					}
+					document.getElementById("area_auto_find_div").innerHTML=org_cont_area[7];
+//					document.getElementById("cat_link").innerHTML=org_cont_area[8];
+					document.getElementById("cat_bis_content_close").innerHTML=org_cont_area[9];
+					document.getElementById("favor_div").innerHTML=org_cont_area[10];
+				}
+			}
+
+			function findInPage(str, gbn){
+				var catIdx = getCurrentCat();
+		    	if(catIdx == 0 && isFirst_biz == 'Y'){
+		    		getOrgContn();
+		    		isFirst_biz = 'N';
+		    	}else if (catIdx == 1 && isFirst_area == 'Y'){
+		    		getOrgContn();
+		    		isFirst_area = 'N';
+		    	}
+		    	
+			    var NS4 = (document.layers);   
+			    var IE4 = (document.all);
+			    IE4 = (document.getElementById);
+			    var win = window;    
+			    var n   = 0;
+			    var txt, i, found;
+			    if (str == "")
+			      return 0;
+			    var color = '#FFE400';
+			    if(gbn == '1'){		
+					setOrgContn();
+			    	
+			    	return;
+			    }
+			    
+			    if (IE4) {
+			      var cnt=-1;
+			      txt = win.document.body.createTextRange();
+			      while(true){
+				      var val = txt.findText(str,0);
+				      if(val == true){
+				    	if(gbn == '1'){
+				    	}else {
+							var isVal = txt.execCommand("BackColor",false, color);
+				    	}
+//				    	var c = txt.moveStart('word');
+				    	txt.moveStart("character", 1);
+				    	txt.moveEnd('textedit');
+				      }else {
+				    	  break;
+				      }
+			      }
+			    }
+		        return false;
+			  }
+			
+			function replaceall(orgstr, str1, str2){
+				var temp = orgstr;
+				
+				while(temp.indexOf(str1)>-1){
+					temp = temp.replace(str1, str2);
+				}
+				return temp;
+			}
+			
+			function searchChrg(){
+				window.open("/fss/html/cm/systemChargeManSearch.jsp", "systemChargeManSearch", "width=1000px, height=450px, status=0, menubar=1, scrollbars=1, location=0");
+			}
+			
+			function authMng(){
+				var frm = document.mainCntnForm;
+				frm.target="_blank";
+				frm.action="/fss/install/mi/gm/ss/start.jsp?TOP_BUSI_NO=M5-04&SUB_BUSI_NO=M5-04-04-06";
+				frm.submit();
+			}
+			function viewUseBoard(){
+				var frm = document.mainCntnForm;
+				frm.target="hiddenFram";
+				frm.action="/fss/html/cm/isisUseBoardCheck.jsp";
+				frm.submit();
+			}
+			function searchSysInfo(){
+				window.open("/fss/html/cm/systemInfoSearch.jsp", "systemInfoSearch", "width=920px, height=550px, status=0, menubar=0, scrollbars=0, location=0");
+			}
+			
+		</script>
+
+        <!-- isis 메인 관련 -->
+        <link rel="stylesheet" href="/fss/html/cm/css/isis_main.css"/>
+        <script src="/fss/html/cm/js/isis_ui.js" charset="euc-kr"></script>
+        <!-- // -->
+</head>
+<body onload='initCatHeight();'>
+
+	<!-- 20230508 임의로 주석처리 ()
+        <form id='mainCntnForm' name='mainCntnForm' method='post'>
+		<input type='hidden' id='ORDERED' name='ORDERED' value='0'>
+		<input type='hidden' id='redirectUrl' name='redirectUrl' value="">            
+		<iframe id='hiddenFram' name='hiddenFram' src="" width='0' height='0'></iframe>
+		<iframe id='hiddenFram2' name='hiddenFram2' src="" width='0' height='0'></iframe>
+	</form> 
+    -->
+
+    <!-- start : ISIS 메인 -->
+    <div class="is-main-contain">
+        <div class="is-inner">
+
+            <div class="is-left-area">
+                <!-- 최근 자주 사용한 업무 시스템 -->
+                <div class="is-fv-system">
+                    <div class="is-title-box">
+                        <h3 class="is-title">최근 자주 사용한 업무 시스템(3개월 기준)</h3>
+                    </div>
+                    <div class="is-contents-box">
+                        <div class="is-fv-list">
+                            <ul>
+                                <li><a href="#">금융정보 종합분석</a></li>
+                                <li><a href="#">대부업감독</a></li>
+                                <li><a href="#">인허가관리</a></li>
+                                <li><a href="#">외환감독조사지원</a></li>
+                                <li><a href="#">자산운용상시감시</a></li>
+                                <li><a href="#">보험대리점상시감시</a></li>
+                                <li><a href="#">검사종합관리 (신)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- // END -->
+
+                <!-- 전체 업무시스템 -->
+                <div class="is-all-system">
+                    <div class="is-title-box">
+                        <h3 class="is-title">전체 업무시스템</h3>
+                        <div class="is-search-box">
+                            <input type="text" placeholder="업무 시스템명을 입력해주세요.">
+                            <button type="button" class="is-btn">검색</button>
+                        </div>
+                        <div class="is-switch-box">
+                            <button type="button">권역별 정렬</button>
+                            <button type="button">권한 시스템</button>
+                            <button type="button">(구)시스템</button>
+                        </div>
+                    </div>
+                    <div class="is-contents-box">
+                        <div class="is-toggle-box">
+                            <div class="is-title-bar">
+                                <h3>감독 업무시스템</h3>
+                            </div>
+                            <div class="is-toggle-contents">
+                                contents
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- // END -->
+            </div>
+
+            <!-- 우측 퀵메뉴 -->
+            <article class="is-quick-menu">
+                <div class="is-qu-menu-box">
+                    <div class="is-top">
+                        <h3>퀵 메뉴</h3>
+                    </div>
+                </div>
+            </article>
+            <!-- // END -->
+
+        </div>
+    </div>
+    <!-- // End : ISIS 메인 // -->
+	
+	
+</body>
+</html>

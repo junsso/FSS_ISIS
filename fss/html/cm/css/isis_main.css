@@ -1,1 +1,24 @@
 @charset "euc-kr";
+
+.is-main-contain { max-width: 1680px; min-width: 1680px; margin: 0 auto;}
+.is-main-contain ul li { list-style: none;}
+.is-main-contain .is-fv-list ul { padding-left: 0;}
+.is-main-contain .is-inner { position: relative; display: flex; gap: 0 10px; align-items: flex-start; height: 2000px;}
+.is-main-contain .is-inner .is-left-area { width: calc(100% - 250px - 10px);}
+
+/* 퀵메뉴 */
+.is-quick-menu { position: sticky; top: 0; width: 250px;}
+.is-quick-menu .is-qu-menu-box{ background-color: pink; width: 250px; height: 400px;}
+
+/* 최근 자주 사용한 업무 시스템 */
+.is-title-box .is-title { margin: 0;}
+
+.is-contents-box { margin-top: 15px;}
+.is-contents-box .is-fv-list { border: 1px solid #ccc; padding: 10px 20px; display: flex; align-items: center; justify-content: center; }
+.is-contents-box .is-fv-list ul { width: 100%;}
+.is-contents-box .is-fv-list ul::after { content: ''; clear: both;}
+.is-contents-box .is-fv-list ul li { float: left; width: calc(25% - 20px); text-align: center; padding: 5px 10px;}
+
+/* 전체 업무시스템 */
+.is-all-system .is-title-box { display: flex; align-items: center; gap: 0 10px; margin-top: 15px;}
+.is-all-system .is-title-box .is-search-box { display: flex; align-items: center; gap: 0 5px;}
