@@ -2,9 +2,10 @@
 
 .is-main-contain { max-width: 1680px; min-width: 1680px; margin: 0 auto;}
 .is-main-contain ul li { list-style: none;}
+.is-main-contain button { border: 0 none; background-color: transparent; padding: 0; cursor: pointer;}
 .is-main-contain .is-fv-list ul { padding-left: 0;}
-.is-main-contain .is-inner { position: relative; display: flex; gap: 0 10px; align-items: flex-start; height: 2000px;}
-.is-main-contain .is-inner .is-left-area { width: calc(100% - 250px - 10px);}
+.is-main-contain > .is-inner { position: relative; display: flex; gap: 0 10px; align-items: flex-start; height: 2000px;}
+.is-main-contain > .is-inner .is-left-area { width: calc(100% - 250px - 10px);}
 
 /* 퀵메뉴 */
 .is-quick-menu { position: sticky; top: 0; width: 250px;}
@@ -22,3 +23,13 @@
 /* 전체 업무시스템 */
 .is-all-system .is-title-box { display: flex; align-items: center; gap: 0 10px; margin-top: 15px;}
 .is-all-system .is-title-box .is-search-box { display: flex; align-items: center; gap: 0 5px;}
+
+/* 토글 */
+.is-toggle-box { }
+.is-toggle-box .is-title-bar { display: flex; align-items: center; justify-content: space-between; padding: 6px 10px; border: 1px solid #ccc; background-color: #efefef;}
+.is-toggle-box .is-title-bar .is-title { margin: 0;}
+.is-toggle-box .is-title-bar .is-arrow { display: block; transition: 0.3s all;}
+.is-toggle-box .is-toggle-contents { display: none;}
+.is-toggle-box .is-toggle-contents .is-inner { border: 1px solid #ccc; padding: 10px; }
+
+.is-toggle-box.current .is-title-bar .is-arrow { transform: rotate(-180deg);}
