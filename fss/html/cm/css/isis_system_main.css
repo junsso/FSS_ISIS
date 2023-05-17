@@ -1,0 +1,121 @@
+@charset "euc-kr";
+
+/************* ///////////////  업무시스템 메인 (넥사공통메인)  /////////////// *************/
+/*tab*/
+.is-nexa-main .is-tab-ui{    
+    
+}
+
+.is-nexa-main .is-tab-ui .is-tab{
+    display: flex;
+}
+.is-nexa-main .is-tab-ui .is-tab .is-tab-multi-toggle{
+    flex: 1;
+    display: flex;
+}
+.is-nexa-main .is-tab-ui .is-tab .is-tab-multi-toggle:not(:first-of-type) .multi-toggle-btn{
+    border-radius: 0;
+    margin-left: -1px;
+}
+.is-nexa-main .is-tab-ui .is-tab .is-tab-multi-toggle:not(:last-of-type) .multi-toggle-btn{
+    border-right: 1px solid transparent;
+}
+.is-nexa-main .is-tab-ui .is-tab .is-tab-multi-toggle:not(:first-of-type) .multi-toggle-btn{
+    border-radius: 5px 0 0 5px;
+}
+.is-nexa-main .is-tab-ui .is-tab .is-tab-multi-toggle:not(:last-of-type) .multi-toggle-btn{
+    border-radius: 0 5px 5px 0;
+}
+.is-nexa-main .is-tab-ui .is-tab .is-tab-multi-toggle .multi-toggle-btn.current{
+    border-color: pink;
+    color: pink;
+    border-right: 1px solid pink;
+    position: relative;
+    z-index: 2;
+}
+/*.is-tab-ui .is-multi-toggle-btn{
+    background-color: #{$first-bgcolor};
+    color: #{$primary-color};
+    border: 1px solid #{$guide-line-color};
+    color: #{$guide-color};
+    line-height: 40px;
+    height: 40px;
+    border-radius: 5px;
+    flex: 1;
+    &:not(:first-of-type){
+        border-radius: 0;
+        margin-left: -1px;
+    }
+    &:first-of-type{
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+    }
+    &:last-of-type{
+        border-radius: 0 5px 5px 0;
+    }
+    &.current{
+        border-color: #{$primary-color};
+        color: #{$primary-color};
+        border-right: 1px solid #{$primary-color};
+        position: relative;
+        z-index: 2;
+    }
+}
+.is-tab-ui .tab-contents{
+}
+.is-tab-ui .tab-contents.current{
+    padding: 15px 0;
+    display: block;
+}
+
+.tab-ui-menu{
+    display: flex;
+    //flex-direction: row;
+    flex-wrap: wrap;
+    .tab-btn{
+        display: none;
+    }
+    .tab-item{
+        flex: 1;
+        flex-wrap: wrap;
+        display: block;
+        background-color: #{$first-bgcolor};
+        color: #{$primary-color};
+        border: 1px solid #{$guide-line-color};
+        text-align: center;
+        color: #{$guide-color};
+        line-height: 40px;
+        height: 40px;
+        border-radius: 5px;
+        flex: 1;
+        cursor: pointer;
+        &:not(:first-of-type){
+            border-radius: 0;
+            margin-left: -1px;
+        }
+        &:first-of-type{
+            border-top-right-radius: 0;
+            border-bottom-right-radius: 0;
+        }
+        &:last-of-type{
+            border-radius: 0 5px 5px 0;
+        }
+    }
+    .tab-btn:checked + .tab-item{
+        border-color: #{$primary-color};
+        color: #{$primary-color};
+        border-right: 1px solid #{$primary-color};
+        position: relative;
+        z-index: 2;
+    }
+    .tab-content{
+        display: none;
+        width: 100%;
+        padding: 15px 0;
+    }
+    #ui_tab1:checked ~ #ui_tab1_content,
+    #ui_tab2:checked ~ #ui_tab2_content,
+    #ui_tab3:checked ~ #ui_tab3_content{
+        display: block;
+    }
+}*/

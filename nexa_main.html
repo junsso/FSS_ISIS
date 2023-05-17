@@ -11,7 +11,7 @@
 		<script src="/fss/html/cm/js/jquery.cookie.js" charset="euc-kr"></script>
 
          <!-- isis 메인 관련 -->
-         <link rel="stylesheet" href="/fss/html/cm/css/isis_main.css"/>
+         <link rel="stylesheet" href="/fss/html/cm/css/isis_system_main.css"/>
          <script src="/fss/html/cm/js/isis_ui.js" charset="euc-kr"></script>
          <!-- // -->
 
@@ -20,26 +20,18 @@
         
         <!-- start : nexa 업무시스템 메인 -->
         <div class="is-nexa-main">
-            <div class="is-tab-ui tab-ui-js-menu">
-                <ul class="tab" style="width: 400px;">
-                    <li class="tab-multi-toggle tab-ui-js-target current"  data-tab="ui_tabs1">
+            <div class="is-tab-ui">
+                <ul class="is-tab">
+                    <li class="is-tab-multi-toggle current"  data-tab="ui_tabs1">
                         <button type="button" class="multi-toggle-btn">시스템 개요</button>
                     </li>
-                    <li class="tab-multi-toggle tab-ui-js-target" data-tab="ui_tabs2" >
-                        <button type="button" class="multi-toggle-btn">Tab2</button>
-                    </li>
-                    <li class="tab-multi-toggle tab-ui-js-target" data-tab="ui_tabs3">
-                        <button type="button" class="multi-toggle-btn">Tab3</button>
-                    </li>
-                    <li class="tab-multi-toggle tab-ui-js-target" data-tab="ui_tabs4">
-                        <button type="button" class="multi-toggle-btn">Tab4</button>
+                    <li class="is-tab-multi-toggle " data-tab="ui_tabs2" >
+                        <button type="button" class="multi-toggle-btn">공지사항</button>
                     </li>
                 </ul>
-                <div class="tab-contain">
-                    <div class="tab-contents current" id="ui_tabs1">tab1 본문 영역</div>
-                    <div class="tab-contents" id="ui_tabs2">tab2 본문 영역</div>
-                    <div class="tab-contents" id="ui_tabs3">tab3 본문 영역</div>
-                    <div class="tab-contents" id="ui_tabs4">tab4 본문 영역</div>
+                <div class="is-tab-contain">
+                    <div class="is-tab-contents current" id="ui_tabs1">시스템 개요 영역</div>
+                    <div class="is-tab-contents" id="ui_tabs2">tab2 공지사항 영역</div>
                 </div>
             </div>
         </div>

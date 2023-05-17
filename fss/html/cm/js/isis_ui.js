@@ -10,13 +10,32 @@ $(document).ready(function(){
         $(this).parent(toggleBox).find(toggleConts).stop().slideToggle(300);
         $(this).parent(toggleBox).toggleClass('current');
     });
-    //목록 이외 클릭시 목록 닫힘
-    // $(document).on('mouseup',function (e){
-    //     if(snbMenuBox.has(e.target).length === 0){
-    //         snbMenu.parents('li').removeClass('current');
-    //         snbDepth2.stop().slideUp(300);
-    //     }
-    // });
+
+     //tab 스크립트
+     $('.tab-ui-js-menu .tab-ui-js-target').click(function(){
+        var tab_id = $(this).attr('data-tab');
+    
+        $('.tab-ui-js-menu .tab-ui-js-target').removeClass('current');
+        $('.tab-contents').removeClass('current');
+        
+        $(this).addClass('current');
+        $("#"+tab_id).addClass('current');
+        return false;
+    });
+
+    //ISIS자주찾는 업무 시스템
+    var swiper = new Swiper(".is-fv-list .swiper", {
+        // pagination: {
+        //   el: ".swiper-pagination",
+        //   type: "fraction",
+        // },
+        slidesPerView: 5,
+        spaceBetween: 20,
+        navigation: {
+          nextEl: ".is-fv-system .swiper-button-next",
+          prevEl: ".is-fv-system .swiper-button-prev",
+        },
+      });
 
 
 })
