@@ -26,25 +26,54 @@
 .is-main-contain > .is-inner { 
     position: relative; 
     display: flex; 
-    gap: 0 10px; 
+    gap: 0 40px; 
     align-items: flex-start;
     height: 2000px;
 }
 .is-main-contain > .is-inner .is-left-area { 
-    width: calc(100% - 250px - 10px);
+    width: calc(100% - 170px - 40px);
 }
 
 /* 퀵메뉴 */
 .is-main-contain .is-quick-menu { 
     position: sticky; 
     top: 0; 
-    width: 250px;
+    width: 170px;
 }
 .is-main-contain .is-quick-menu .is-qu-menu-box{ 
-    background-color: pink; 
-    width: 250px;
+    background-color: #ffffff; 
+    width: 100%;
     height: 400px;
 }
+.is-main-contain .is-quick-menu .is-qu-menu-box .is-top {
+    background-color: #333333;
+}
+.is-main-contain .is-quick-menu .is-qu-menu-box .is-top h3 {
+    font-size: 18px;
+    color: #ffffff;
+    text-align: center;
+    padding: 18px 0;
+}
+.is-main-contain .is-quick-menu .is-qu-menu-box .is-body {
+    border: 1px solid #7d7d7d;
+    border-top: 0px;
+}
+.is-main-contain .is-quick-menu .is-qu-menu-box .is-body ul {
+    padding: 0;
+}
+.is-main-contain .is-quick-menu .is-qu-menu-box .is-body ul li {
+    border-bottom: 1px solid #7d7d7d;
+}
+.is-main-contain .is-quick-menu .is-qu-menu-box .is-body ul li:last-child {
+    border-bottom: 0;
+}
+.is-main-contain .is-quick-menu .is-qu-menu-box .is-body ul li a {
+    display: block;
+    padding: 15px 10px;
+    color: #222222;
+    text-align: center;
+}
+
 
 /* ISIS자주찾는 업무 시스템 */
 .is-main-contain .is-contents-box { 

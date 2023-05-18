@@ -30,7 +30,9 @@ $(document).ready(function(){
         //   type: "fraction",
         // },
         slidesPerView: 5,
+        slidesPerGroup: 5,
         spaceBetween: 20,
+        loopFillGroupWithBlank : false,
         navigation: {
           nextEl: ".is-fv-system .swiper-button-next",
           prevEl: ".is-fv-system .swiper-button-prev",
