@@ -2,7 +2,6 @@
 
 /************* ///////////////  포탈 메인화면  /////////////// *************/
 /*main-color : #26559f , #0080c6 , #d1e1f5*/
-/* basic */
 .is-main-contain * { 
     margin: 0;
 }
@@ -260,7 +259,7 @@
     align-items: center;
 }
 .is-main-contain .is-switch-box .is-form-wrap .is-title {
-    font-size: 16px;
+    font-size: 14px;
 }
 .is-tab-ui .is-tab{
     display: flex;
@@ -350,9 +349,6 @@
 }
 
 /* 토글 */
-.is-main-contain .is-toggle-box {
-
-}
 .is-main-contain .is-toggle-box .is-title-bar { 
     display: flex; 
     align-items: center; 
@@ -365,6 +361,7 @@
 }
 .is-main-contain .is-toggle-box .is-title-bar .is-title { 
     margin: 0;
+    font-size: 16px;
 }
 .is-main-contain .is-toggle-box .is-title-bar .is-arrow { 
     display: block;

@@ -11,8 +11,25 @@
 		<script src="/fss/html/cm/js/jquery.cookie.js" charset="euc-kr"></script>
 
          <!-- isis 메인 관련 -->
+
+         <script type="text/javascript">
+            $(document).ready(function(){
+                //tab 스크립트
+                $('.is-tab .is-tab-multi-toggle').click(function(){
+                    var tab_id = $(this).attr('data-tab');
+                    
+                    $('.is-tab .is-tab-multi-toggle').removeClass('current');
+                    $('.is-tab-contents').removeClass('current');
+                    
+                    $(this).addClass('current');
+                    $("#"+tab_id).addClass('current');
+                    return false;
+                });
+            });
+         </script>
+
          <link rel="stylesheet" href="/fss/html/cm/css/isis_system_main.css"/>
-         <script src="/fss/html/cm/js/isis_ui.js" charset="euc-kr"></script>
+         <script src="/fss/html/cm/js/isis_ui.js" charset="euc-kr"></script>        
          <!-- // -->
 
     </head>
@@ -23,10 +40,10 @@
             <div class="is-tab-ui">
                 <ul class="is-tab">
                     <li class="is-tab-multi-toggle current"  data-tab="ui_tabs1">
-                        <button type="button" class="multi-toggle-btn">시스템 개요</button>
+                        <button type="button" class="is-multi-toggle-btn">시스템 개요</button>
                     </li>
-                    <li class="is-tab-multi-toggle " data-tab="ui_tabs2" >
-                        <button type="button" class="multi-toggle-btn">공지사항</button>
+                    <li class="is-tab-multi-toggle" data-tab="ui_tabs2" >
+                        <button type="button" class="is-multi-toggle-btn">공지사항</button>
                     </li>
                 </ul>
                 <div class="is-tab-contain">

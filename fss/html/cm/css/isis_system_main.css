@@ -1,121 +1,59 @@
 @charset "euc-kr";
 
 /************* ///////////////  업무시스템 메인 (넥사공통메인)  /////////////// *************/
-/*tab*/
-.is-nexa-main .is-tab-ui{    
-    
+/* basic */
+.is-nexa-main * { 
+    margin: 0;
 }
-
+/*tab*/
 .is-nexa-main .is-tab-ui .is-tab{
     display: flex;
+    padding-left: 0;
+    border-bottom: 1px solid #ccc;
 }
 .is-nexa-main .is-tab-ui .is-tab .is-tab-multi-toggle{
-    flex: 1;
     display: flex;
+    width: 300px;
 }
-.is-nexa-main .is-tab-ui .is-tab .is-tab-multi-toggle:not(:first-of-type) .multi-toggle-btn{
+.is-nexa-main .is-tab-ui .is-tab .is-tab-multi-toggle:not(:first-of-type){
     border-radius: 0;
     margin-left: -1px;
 }
-.is-nexa-main .is-tab-ui .is-tab .is-tab-multi-toggle:not(:last-of-type) .multi-toggle-btn{
-    border-right: 1px solid transparent;
-}
-.is-nexa-main .is-tab-ui .is-tab .is-tab-multi-toggle:not(:first-of-type) .multi-toggle-btn{
-    border-radius: 5px 0 0 5px;
-}
-.is-nexa-main .is-tab-ui .is-tab .is-tab-multi-toggle:not(:last-of-type) .multi-toggle-btn{
-    border-radius: 0 5px 5px 0;
-}
-.is-nexa-main .is-tab-ui .is-tab .is-tab-multi-toggle .multi-toggle-btn.current{
-    border-color: pink;
-    color: pink;
-    border-right: 1px solid pink;
-    position: relative;
-    z-index: 2;
-}
-/*.is-tab-ui .is-multi-toggle-btn{
-    background-color: #{$first-bgcolor};
-    color: #{$primary-color};
-    border: 1px solid #{$guide-line-color};
-    color: #{$guide-color};
+.is-nexa-main .is-tab-ui .is-multi-toggle-btn{
+    background-color: transparent;
+    color: #4e4e4e;
     line-height: 40px;
     height: 40px;
-    border-radius: 5px;
     flex: 1;
-    &:not(:first-of-type){
-        border-radius: 0;
-        margin-left: -1px;
-    }
-    &:first-of-type{
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-    }
-    &:last-of-type{
-        border-radius: 0 5px 5px 0;
-    }
-    &.current{
-        border-color: #{$primary-color};
-        color: #{$primary-color};
-        border-right: 1px solid #{$primary-color};
-        position: relative;
-        z-index: 2;
-    }
+    font-size: 16px;
+    font-weight: 700;
+    padding: 0;
+    border: 1px solid #ccc;
+    border-bottom-color: transparent;
+    position: relative;
+    background-color: #efefef;
+    cursor: pointer;
 }
-.is-tab-ui .tab-contents{
+.is-nexa-main .is-tab-ui .is-tab .is-tab-multi-toggle.current .is-multi-toggle-btn{
+    background-color: #fff;
+    color: #0080c6;
+    position: relative;
+    z-index: 2;
+    border-top-color: #0080c6;
 }
-.is-tab-ui .tab-contents.current{
+.is-tab-ui .is-tab-contents {
+    display: none;
+}
+.is-nexa-main .is-tab-ui .is-tab .is-tab-multi-toggle.current .is-multi-toggle-btn::before {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    bottom: -2px;
+    background-color: #fff;
+}
+.is-tab-ui .is-tab-contents.current{
     padding: 15px 0;
     display: block;
 }
-
-.tab-ui-menu{
-    display: flex;
-    //flex-direction: row;
-    flex-wrap: wrap;
-    .tab-btn{
-        display: none;
-    }
-    .tab-item{
-        flex: 1;
-        flex-wrap: wrap;
-        display: block;
-        background-color: #{$first-bgcolor};
-        color: #{$primary-color};
-        border: 1px solid #{$guide-line-color};
-        text-align: center;
-        color: #{$guide-color};
-        line-height: 40px;
-        height: 40px;
-        border-radius: 5px;
-        flex: 1;
-        cursor: pointer;
-        &:not(:first-of-type){
-            border-radius: 0;
-            margin-left: -1px;
-        }
-        &:first-of-type{
-            border-top-right-radius: 0;
-            border-bottom-right-radius: 0;
-        }
-        &:last-of-type{
-            border-radius: 0 5px 5px 0;
-        }
-    }
-    .tab-btn:checked + .tab-item{
-        border-color: #{$primary-color};
-        color: #{$primary-color};
-        border-right: 1px solid #{$primary-color};
-        position: relative;
-        z-index: 2;
-    }
-    .tab-content{
-        display: none;
-        width: 100%;
-        padding: 15px 0;
-    }
-    #ui_tab1:checked ~ #ui_tab1_content,
-    #ui_tab2:checked ~ #ui_tab2_content,
-    #ui_tab3:checked ~ #ui_tab3_content{
-        display: block;
-    }
-}*/
