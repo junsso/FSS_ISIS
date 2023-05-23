@@ -6,7 +6,6 @@ $(document).ready(function(){
     let toggleConts = $('.is-toggle-contents');
     
     $(toggleTitle).on('click',function(){
-        //alert('afsfd');
         $(this).parent(toggleBox).find(toggleConts).stop().slideToggle(300);
         $(this).parent(toggleBox).toggleClass('current');
     });
@@ -25,10 +24,6 @@ $(document).ready(function(){
 
     //ISIS자주찾는 업무 시스템
     var swiper = new Swiper(".is-fv-list .swiper", {
-        // pagination: {
-        //   el: ".swiper-pagination",
-        //   type: "fraction",
-        // },
         slidesPerView: 5,
         slidesPerGroup: 5,
         spaceBetween: 20,
@@ -38,6 +33,14 @@ $(document).ready(function(){
           prevEl: ".is-fv-system .swiper-button-prev",
         },
       });
+
+    //tab
+    $('.is-tab-ui-js-menu .is-tab-ui-js-target').click(function(){
+      $('.is-tab-ui-js-menu .is-tab-ui-js-target').removeClass('current');
+      
+      $(this).addClass('current');
+      return false;
+  });
 
 
 })

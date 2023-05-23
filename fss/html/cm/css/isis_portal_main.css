@@ -215,75 +215,138 @@
 
 /* 전체 업무시스템 */
 .is-main-contain .is-all-system .is-title-box { 
+    margin-top: 20px;    
+}
+.is-main-contain .is-all-system .is-title-box .is-inner {
+    border-bottom: 1px solid #222222;
     display: flex;
     align-items: center; 
+    justify-content: space-between;
     gap: 0 10px; 
-    margin-top: 15px;
+    padding-bottom: 13px;
+}
+.is-main-contain .is-all-system .is-title-box .is-title {
+    font-size: 24px;
 }
 .is-main-contain .is-all-system .is-title-box .is-search-box { 
     display: flex; 
     align-items: center; 
     gap: 0 5px;
 }
+.is-main-contain .is-all-system .is-title-box .is-search-box input {
+    width: 500px;
+    height: 40px;
+    padding: 0 10px;
+}
+.is-main-contain .is-all-system .is-title-box .is-search-box .is-btn {
+    background-color: #222222;
+    color: #ffffff;
+    line-height: 40px;
+    padding: 0 20px;
+}
 
-/*switch button */
+/* tab */
 .is-main-contain .is-switch-box {
-    margin-left: auto;
+    background-color: #efefef;
+    border: 1px solid #ccc;
     display: flex;
     align-items: center;
-    gap: 10px;
+    gap: 0 30px;
+    padding: 12px 20px;
 }
-.is-main-contain .is-switch-button {
-    position: relative;
-    display: inline-block;
-    width: 110px;
-    height: 22px;
+.is-main-contain .is-switch-box .is-form-wrap {
+    display: flex;
+    gap: 15px;
+    align-items: center;
 }
-.is-main-contain .is-switch-button .is-input{
-    opacity: 0;
-    width: 0;
-    height: 0;
+.is-main-contain .is-switch-box .is-form-wrap .is-title {
+    font-size: 16px;
 }
-.is-main-contain .is-switch-button .is-onoff-switch {
-    position: absolute;
-    cursor: pointer;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-radius:20px;
-    background-color: #efefef;
-    -webkit-transition: .4s;
-    transition: .4s;
-    padding-left: 26px;
+.is-tab-ui .is-tab{
+    display: flex;
+    padding: 0;
 }
-.is-main-contain .is-switch-button .is-onoff-switch::before{
-    position: absolute;
-    content: "";
-    height: 16px;
-    width: 16px;
-    left: 4px;
-    bottom: 3px;
+.is-tab-ui .is-tab-multi-toggle{
+    display: flex;
+}
+.is-tab-ui .is-multi-toggle-btn{
     background-color: #fff;
-    -webkit-transition: .5s;
-    transition: .4s;
-    border-radius:20px;
+    color: #222;
+    border: 1px solid #7d7d7d;
+    line-height: 34px;
+    height: 34px;
+    flex: 1;
+    padding: 0 15px;
 }
-.is-main-contain .is-switch-button .is-input:checked + .is-onoff-switch {
-    background-color: pink;
-    padding-left: 12px;
-    padding-right: 26px;
+.is-tab-ui .is-tab-multi-toggle:not(:first-of-type) .is-multi-toggle-btn{
+    margin-left: -1px;
 }
-.is-main-contain .is-switch-button .is-input:checked + .is-onoff-switch::before {
-    -webkit-transform: translateX(85px);
-    -ms-transform: translateX(85px);
-    transform: translateX(85px);
+.is-tab-ui .is-tab-multi-toggle:last-of-type .is-multi-toggle-btn{
+    margin-left: -1px;
 }
-.is-main-contain .is-switch-button .is-input:disabled .is-onoff-switch,
-.is-main-contain .is-switch-button .is-input.disabled .is-onoff-switch,
-.is-main-contain .is-switch-button .is-input:read-only .is-onoff-switch  {
-    cursor: default;
+.is-tab-ui .is-tab-multi-toggle.current .is-multi-toggle-btn {
+    color: #fff;
+    background-color: #0080c6;
+    position: relative;
+    z-index: 2;
+}
+/*switch button */
+.is-main-contain .is-switch-box label {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    position: relative;
+}
+.is-main-contain .is-switch-box label span {
+    color: #fff;
+    position: absolute;
+    padding-left: 35px;
+    transition: 0.3s all;
+}
+.is-main-contain .is-switch-box .is-input[type="checkbox"] {
+    appearance: none;
+    position: relative;
+    border-radius: 1.25em;
+    width: 168px;
+    height: 34px;
     background-color: #ccc;
+    cursor: pointer;
+}
+.is-main-contain .is-switch-box .is-input[type="checkbox"]::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 4px;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    transform: translateY(-50%);
+    background-color: #fff;
+    transition: left 250ms linear;
+}
+.is-main-contain .is-switch-box .is-input[type="checkbox"]:checked::before {
+    background-color: white;
+    left: calc(100% - 4px - 25px);
+}  
+.is-main-contain .is-switch-box .is-input[type="checkbox"]:checked {
+    background-color: #0080c6;
+    border-color: #0080c6;
+}
+.is-main-contain .is-switch-box .is-input[type="checkbox"]:checked + span {
+    padding-left: 20px;
+}
+.is-main-contain .is-switch-box .is-input[type="checkbox"]:disabled {
+    border-color: lightgray;
+    opacity: 0.7;
+    cursor: not-allowed;
+}  
+.is-main-contain .is-switch-box .is-input[type="checkbox"]:disabled:before {
+    background-color: lightgray;
+}  
+.is-main-contain .is-switch-box .is-input[type="checkbox"]:disabled + span {
+    opacity: 0.7;
+    cursor: not-allowed;
 }
 
 /* 토글 */
@@ -296,7 +359,9 @@
     justify-content: space-between; 
     padding: 10px; 
     border: 1px solid #ccc; 
-    background-color: #efefef;
+    background-color: #d1e1f5;
+    font-size: 18px;
+    cursor: pointer;
 }
 .is-main-contain .is-toggle-box .is-title-bar .is-title { 
     margin: 0;
@@ -309,11 +374,42 @@
 }
 .is-main-contain .is-toggle-box .is-toggle-contents .is-inner { 
     border: 1px solid #ccc; 
-    padding: 10px; 
+    border-top: 0;
+    padding: 20px; 
 }
 
 .is-main-contain .is-toggle-box.current .is-title-bar .is-arrow {
     transform: rotate(-180deg);
+}
+.is-main-contain .is-toggle-box .is-list-box {
+    padding-left: 0;
+    display: flex;
+    gap: 15px 10px;
+    width: 100%;
+    flex-wrap: wrap;
+}
+.is-main-contain .is-toggle-box .is-list-box li {
+    width: calc(25% - 20px);
+    position: relative;
+    padding-left: 10px;
+}
+.is-main-contain .is-toggle-box .is-list-box li::before {
+    content: '';
+    display: block;
+    width: 4px;
+    height: 4px;
+    border-radius: 100%;
+    background-color: #222;
+    position: absolute;
+    top: 8px;
+    left: 0;
+}
+.is-main-contain .is-toggle-box .is-list-box li a {
+    color: #7d7d7d;
+    font-weight: 700;
+}
+.is-main-contain .is-toggle-box .is-list-box li a:hover {
+    color: #0080c6;
 }
 
 
