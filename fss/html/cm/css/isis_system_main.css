@@ -1,11 +1,17 @@
 @charset "euc-kr";
 
-/************* ///////////////  ì—…ë¬´ì‹œìŠ¤í…œ ë©”ì¸ (ë„¥ì‚¬ê³µí†µë©”ì¸)  /////////////// *************/
+/************* ///////////////  ¾÷¹«½Ã½ºÅÛ ¸ŞÀÎ (³Ø»ç°øÅë¸ŞÀÎ)  /////////////// *************/
 /* basic */
 .is-nexa-main * { 
     margin: 0;
 }
+.is-nexa-main {
+    height: 806px;
+}
 /*tab*/
+.is-nexa-main .is-tab-ui {
+    height: 100%;
+}
 .is-nexa-main .is-tab-ui .is-tab{
     display: flex;
     padding-left: 0;
@@ -41,8 +47,13 @@
     z-index: 2;
     border-top-color: #0080c6;
 }
-.is-tab-ui .is-tab-contents {
+.is-nexa-main .is-tab-ui .is-tab-contain {
+    height: calc(100% - 41px);
+}
+.is-nexa-main .is-tab-ui .is-tab-contents {
     display: none;
+    padding: 15px 0;
+    height: calc(100% - 30px);
 }
 .is-nexa-main .is-tab-ui .is-tab .is-tab-multi-toggle.current .is-multi-toggle-btn::before {
     content: '';
@@ -53,7 +64,46 @@
     bottom: -2px;
     background-color: #fff;
 }
-.is-tab-ui .is-tab-contents.current{
-    padding: 15px 0;
+.is-nexa-main .is-tab-ui .is-tab-contents.current{
     display: block;
+}
+/* tab contents */
+.is-nexa-main .is-tab-contents .is-flex-wrap {
+    display: flex;
+    gap: 20px;
+    height: 100%;
+}
+.is-nexa-main .is-tab-contents .is-flex-wrap .is-lf-box {
+    width: calc(100% - 400px - 20px);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.is-nexa-main .is-tab-contents .is-flex-wrap .is-rt-box {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.is-nexa-main .is-tab-contents .is-flex-wrap .is-box {
+    box-shadow: 2px 5px 10px rgba(0,0,0,0.4);
+}
+.is-nexa-main .is-tab-contents .is-flex-wrap .is-lf-box .is-box {
+    height: 50vh;
+    background-color: skyblue;
+}
+.is-nexa-main .is-tab-contents .is-flex-wrap .is-box .is-conts-box {  
+    overflow: auto;
+}
+.is-nexa-main .is-tab-contents .is-flex-wrap .is-box .is-conts-box::-webkit-scrollbar{
+    width: 5px;
+    height: 5px;
+}
+.is-nexa-main .is-tab-contents .is-flex-wrap .is-box .is-conts-box::-webkit-scrollbar-thumb{
+    background-color: #efefef; 
+    border-radius: 10px;
+}
+.is-nexa-main .is-tab-contents .is-flex-wrap .is-box .is-conts-box::-webkit-scrollbar-track{
+    background-color: #4e4e4e;
+    border-radius: 10px;
 }

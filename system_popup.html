@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=euc-kr" />
+		<meta http-equiv="imagetoolbar" content="no" />
+		<title>☞ ISIS 통합 관리 시스템 ☜</title>
+		<link rel="stylesheet" href="fss/html/cm/css/jquery-ui.css"/>
+		<link rel="stylesheet" href="fss/html/cm/css/contents.css"/>
+		<script src="fss/html/cm/js/jquery-1.9.1.js" charset="euc-kr"></script>
+		<script src="fss/html/cm/js/jquery-ui.js" charset="euc-kr"></script>
+		<script src="fss/html/cm/js/jquery.cookie.js" charset="euc-kr"></script>
+
+         <!-- [추가] tree 관련 -->
+
+         <script type="text/javascript">
+            $(document).ready(function(){
+                //tab 스크립트
+                $('.is-tab-btn .is-multi-toggle').click(function(){
+                    var tab_id = $(this).attr('data-tab');
+                    
+                    $('.is-tab-btn .is-multi-toggle').removeClass('current');
+                    $('.is-conts-contain').removeClass('current');
+                    
+                    $(this).addClass('current');
+                    $("#"+tab_id).addClass('current');
+                    return false;
+                });
+            });
+         </script>
+
+         <link rel="stylesheet" href="fss/html/cm/css/isis_portal_main.css"/>
+         <script src="fss/html/cm/js/isis_ui.js" charset="euc-kr"></script>        
+         <!-- // -->
+
+    </head>
+    <body>
+        
+        <!-- [추가] start : 시스템 개요 조회 -->
+        <div class="is-popup">
+            <div class="is-inner">
+                <div class="is-title">
+                    <h2>시스템 개요 조회</h2>
+                    <i class="is-search-icon"></i>
+                </div>
+                <div class="is-search-area">
+                    <div class="is-tab-btn">
+                        <button type="button" class="is-multi-toggle current" data-tab="is-tab1">시스템 찾기</button>
+                        <button type="button" class="is-multi-toggle" data-tab="is-tab2">키워드 찾기</button>
+                    </div>
+                    <span class="is-desc">※ 시스템은 돋보기 버튼을 눌러 검색하셔야 합니다.</span>
+                    <div class="is-search-input">
+                        <div class="is-form-wrap">
+                            <input type="text" placeholder="검색어를 입력해 주세요.">
+                            <button type="button" class="is-btn"></button>
+                        </div>
+                        <button type="button" class="is-search-btn">검색</button>
+                    </div>
+                </div>
+                <div class="is-tab-contents">
+                    <div class="is-conts-contain current" id="is-tab1">
+                        <div class="is-conts">
+                            <div class="is-title-box">
+                                <h3>시스템개요</h3>
+                            </div>
+                            <div class="is-section-box">
+                                <div class="is-lf-section">
+                                    <div class="is-col"></div>
+                                    <div class="is-col"></div>
+                                </div>
+                                <div class="is-rt-section">
+                                    <div class="is-col"></div>
+                                    <div class="is-col"></div>
+                                    <div class="is-col"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="is-conts-contain" id="is-tab2">키워드 찾기 본문</div>
+                </div>
+            </div>
+        </div>
+        <!-- // End -->
+    </body>
+</html>
