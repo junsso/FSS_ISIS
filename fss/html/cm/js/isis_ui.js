@@ -1,20 +1,19 @@
 $(document).ready(function(){
 
     //snb
-    let toggleBox = $('.is-toggle-box');
-    let toggleTitle = $('.is-toggle-box .is-title-bar');
-    let toggleConts = $('.is-toggle-contents');
+    let isToggleTitle = $('.is-toggle-box .is-title-bar .is-arrow');
+    let isToggleConts = $('.is-toggle-contents');
     
-    $(toggleTitle).on('click',function(){
-        $(this).parent(toggleBox).find(toggleConts).stop().slideToggle(300);
-        $(this).parent(toggleBox).toggleClass('current');
+    $(isToggleTitle).on('click',function(){
+      $(this).parents('.is-toggle-box').find(isToggleConts).stop().slideToggle(300);
+      $(this).parents('.is-toggle-box').toggleClass('current');
     });     
 
     //ISIS자주찾는 업무 시스템
     var swiper = new Swiper(".is-fv-list .swiper", {
         slidesPerView: 5,
         slidesPerGroup: 5,
-        spaceBetween: 20,
+        spaceBetween: 15,
         loopFillGroupWithBlank : false,
         navigation: {
           nextEl: ".is-fv-system .swiper-button-next",
