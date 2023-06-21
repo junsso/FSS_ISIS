@@ -14,10 +14,15 @@ $(document).ready(function(){
         slidesPerView: 5,
         slidesPerGroup: 5,
         spaceBetween: 15,
-        loopFillGroupWithBlank : false,
+        loop : false,
+        loopAdditionalSlides : 1,
         navigation: {
           nextEl: ".is-fv-system .swiper-button-next",
           prevEl: ".is-fv-system .swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          type: "fraction",
         },
       });
 
