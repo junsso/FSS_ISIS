@@ -141,12 +141,14 @@
     display: flex;
     align-items: center;
     gap: 0 20px;
-    font-size: 0;
     margin-top: 10px;
 }
 .is-main-contain .is-fv-system .is-indicator .swiper-pagination {
     position: inherit;
     width: auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 .is-main-contain .is-fv-system .is-indicator .swiper-pagination span {
     font-size: 14px;
@@ -156,14 +158,12 @@
 .is-main-contain .is-fv-system .is-indicator .swiper-pagination .swiper-pagination-current {
     color: #0080C6;
 }
-.is-main-contain .is-fv-system .is-indicator .swiper-pagination .swiper-pagination-current::after {
-    content: '';
-    display: inline-block;
-    vertical-align: middle;
+.is-main-contain .is-fv-system .is-indicator .swiper-pagination .line {
+    font-style: normal;
+    display: block;
     width: 12px;
     height: 1px;
     background-color: #999;
-    margin: 0 8px;
 }
 .is-main-contain .is-fv-system .is-indicator .is-etc {
     display: block;
@@ -186,21 +186,19 @@
     align-items: center;
     gap: 12px;
 }
-.is-main-contain .is-fv-system .is-indicator .swiper-button-prev::after {
-    content: '';
+.is-main-contain .is-fv-system .swiper-button-next, 
+.is-main-contain .is-fv-system .swiper-button-prev {
     background-image: url('../images/is_main_arrow_l.svg');
-    width: 8px;
-    height: 14px;
+    background-size: 10px;
     filter: invert(39%) sepia(40%) saturate(1646%) hue-rotate(166deg) brightness(94%) contrast(110%);
 }
-.is-main-contain .is-fv-system .is-indicator .swiper-button-next::after {
-    content: '';
-    background-image: url('../images/is_main_arrow_l.svg');
-    width: 8px;
-    height: 14px;
-    filter: invert(39%) sepia(40%) saturate(1646%) hue-rotate(166deg) brightness(94%) contrast(110%);
+.is-main-contain .is-fv-system .swiper-button-next {
     transform: rotate(-180deg);
 }
+.is-main-contain .is-fv-system .swiper-button-disabled {
+    filter: contrast(0);
+}
+
 .is-main-contain .is-fv-system .is-indicator .swiper-button-next, 
 .is-main-contain .is-fv-system .is-indicator .swiper-button-prev {
     --swiper-navigation-size : 12px; 
@@ -208,16 +206,15 @@
     top: auto;
     left: auto;
     right: auto;
-    width: 15px;
-}
-.is-main-contain .is-fv-system .is-indicator .swiper-button-next.swiper-button-disabled::after, 
-.is-main-contain .is-fv-system .is-indicator .swiper-button-prev.swiper-button-disabled::after {
-    filter: contrast(0);
+    width: 24px;
+    height: 24px;
 }
 
 
 .is-main-contain .is-fv-system .is-fv-list {
     width: calc(100% - 270px - 30px);
+    display: flex;
+    align-items: center;
 }
 .is-main-contain .is-fv-system .is-fv-list .swiper-slide a {
     display: flex;

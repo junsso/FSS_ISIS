@@ -10,12 +10,13 @@ $(document).ready(function(){
     });     
 
     //ISIS자주찾는 업무 시스템
-    var swiper = new Swiper(".is-fv-list .swiper", {
+    var swiper = new Swiper(".is-fv-list .swiper-container", {
         slidesPerView: 5,
-        slidesPerGroup: 5,
         spaceBetween: 15,
-        loop : false,
-        loopAdditionalSlides : 1,
+        slidesPerGroup: 5,
+        //loop : true,
+        loopFillGroupWithBlank : true,
+        watchOverflow: false, //슬라이드가 1개 일 때 pager, button 숨김 여부 설정
         navigation: {
           nextEl: ".is-fv-system .swiper-button-next",
           prevEl: ".is-fv-system .swiper-button-prev",
@@ -23,6 +24,11 @@ $(document).ready(function(){
         pagination: {
           el: ".swiper-pagination",
           type: "fraction",
+          renderFraction: function (currentClass, totalClass) {
+            return '<span class="' + currentClass + '"></span>' +
+                   '<em class="line"></em> ' +
+                   '<span class="' + totalClass + '"></span>';
+          }
         },
       });
 
