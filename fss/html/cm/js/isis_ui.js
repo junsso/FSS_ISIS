@@ -15,7 +15,7 @@ $(document).ready(function(){
         spaceBetween: 15,
         slidesPerGroup: 5,
         //loop : true,
-        loopFillGroupWithBlank : true,
+        //loopFillGroupWithBlank : true,
         watchOverflow: false, //슬라이드가 1개 일 때 pager, button 숨김 여부 설정
         navigation: {
           nextEl: ".is-fv-system .swiper-button-next",
@@ -30,7 +30,7 @@ $(document).ready(function(){
                    '<span class="' + totalClass + '"></span>';
           }
         },
-      });
+      });    
 
     //tab
     $('.is-tab-ui-js-menu .is-tab-ui-js-target').click(function(){

@@ -268,7 +268,7 @@
 .is-main-contain .is-fv-system .is-fv-list .swiper-slide a:hover span::after {
     color: #0080c6;
 } */
- 
+
 
 /* 전체 업무시스템 */
 .is-main-contain .is-all-system { 
@@ -439,6 +439,9 @@
     background-color: #fff;
     background-position: center 5px;
     background-repeat: no-repeat;
+}
+.is-main-contain .is-toggle-box .is-title-bar .is-drop-btns .is-btn:not(:first-child) {
+    margin-top: -1px;
 }
 .is-main-contain .is-toggle-box .is-title-bar .is-drop-btns .is-btn.up {
     background-image: url('../images/is_main_btn_up.svg');
