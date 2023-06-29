@@ -11,9 +11,9 @@ $(document).ready(function(){
 
     //ISIS자주찾는 업무 시스템
     var swiper = new Swiper(".is-fv-list .swiper-container", {
-        slidesPerView: 5,
+        slidesPerView: 4,
         spaceBetween: 15,
-        slidesPerGroup: 5,
+        slidesPerGroup: 4,
         //loop : true,
         //loopFillGroupWithBlank : true,
         watchOverflow: false, //슬라이드가 1개 일 때 pager, button 숨김 여부 설정

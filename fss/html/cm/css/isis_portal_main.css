@@ -6,8 +6,8 @@
     margin: 0;
 }
 .is-main-contain { 
-    max-width: 1680px; 
-    min-width: 1680px; 
+    max-width: 1280px; 
+    min-width: 1280px; 
     margin: 0 auto;
 }
 .is-main-contain ul li { 
@@ -74,7 +74,7 @@
     justify-content: center;
     flex-direction: column;
     gap: 10px;
-    padding: 20px 10px;
+    padding: 20px 9px;
 }
 .is-main-contain .is-quick-menu .is-qu-menu-box .is-body ul li a .is-ico {
     width: 32px;
@@ -120,6 +120,7 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    width: 250px;
 }
 .is-main-contain .is-fv-system .is-title-box .desc{
     font-size: 13px;
@@ -212,7 +213,7 @@
 
 
 .is-main-contain .is-fv-system .is-fv-list {
-    width: calc(100% - 270px - 30px);
+    width: calc(100% - 250px - 30px);
     display: flex;
     align-items: center;
 }
@@ -373,13 +374,13 @@
     appearance: none;
     position: relative;
     border-radius: 1.25em;
-    width: 155px;
+    width: 166px;
     height: 32px;
     background-color: #C6C9D1;
     cursor: pointer;
 }
 .is-main-contain .is-switch-box .is-input.input2[type="checkbox"] {
-    width: 148px;
+    width: 156px;
 }
 .is-main-contain .is-switch-box .is-input[type="checkbox"]::before {
     content: "";
