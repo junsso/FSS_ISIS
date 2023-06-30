@@ -356,7 +356,7 @@ a {
     background-color: #fff;
     color: #666666;
     border: 1px solid #CFCFCF;
-    line-height: 32px;
+    line-height: 30px;
     height: 32px;
     flex: 1;
     padding: 0 20px;
@@ -385,6 +385,8 @@ a {
     font-size: 13px;
     color: #fff;
     position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
     padding-left: 35px;
     transition: 0.3s all;
     line-height: 30px;
@@ -393,7 +395,7 @@ a {
     appearance: none;
     position: relative;
     border-radius: 1.25em;
-    width: 154px;
+    width: 158px;
     height: 32px;
     background-color: #C6C9D1;
     cursor: pointer;
