@@ -66,16 +66,23 @@ $(document).ready(function(){
         $(this).parent(tgTreeP).toggleClass('toggle');
     }); 
 
-    //console.log($('.is-toggle-box').length);
+    //업무시스템 위치 이동
+    let upBtn = $('.is-contents-item .is-toggle-box .up');
+    let downBtn = $('.is-contents-item .is-toggle-box .down');
+    let objParents = $('.is-contents-item .is-toggle-box');
 
-    let sortValue = $('.is-contents-box .is-toggle-box').length;
-    let btnsTarget = $('.is-drop-btns .is-btn');
-    let tmpObj = $(this).closest('.is-contents-box .is-toggle-box');
-    let tmpObjIndex = $(tmpObj).index();
-
-    $(btnsTarget).on('click', function(){
-      $(this).closest('.is-toggle-box').css('background-color', 'red');
-      //$(this).closest('.is-toggle-box').prev().appendTo('.is-toggle-box');
-      //console.log(tmpObjIndex);
+    $(upBtn).on('click', function(){
+      let item = $(this).closest(objParents); 
+      let prev = $(item).prev();
+      if(prev.length > 0){ 
+        $(item).insertBefore(prev);
+      }
+    });
+    $(downBtn).on('click', function(){
+      let item = $(this).closest(objParents);
+      let next = $(item).next();
+      if(next.length > 0){
+        $(item).insertAfter(next);
+      }
     });
 }) 

@@ -23,9 +23,9 @@ a {
     letter-spacing: -0.5px;    
 }
 .is-main-contain { 
-    max-width: 1280px; 
-    min-width: 1280px; 
-    margin: 0 auto;
+    max-width: 1262px; 
+    min-width: 1262px; 
+    /*margin: 0 auto;*/
 }
 .is-main-contain ul li { 
     list-style: none;
@@ -118,12 +118,6 @@ a {
 
 
 /* ISIS자주찾는 업무 시스템 */
-.is-main-contain .is-contents-box { 
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-}
 .is-main-contain .is-fv-system {
     background: linear-gradient(270.72deg, #D2EDFC 0%, #E5EEF3 100%);
     display: flex;
@@ -440,6 +434,17 @@ a {
 }
 
 /* 토글 */
+.is-main-contain .is-contents-box { 
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.is-main-contain .is-contents-box .is-contents-item {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
 .is-main-contain .is-toggle-box .is-title-bar { 
     display: flex; 
     align-items: center; 
@@ -571,9 +576,9 @@ a {
     display: inline-block;
     background-color: #B4FAFF;
     width: auto;
-    height: 20px;
+    height: 19px;
     font-size: 16px;
-    line-height: 20px;
+    line-height: 19px;
     color: #999;
     /* position: absolute;
     top: 50%;
