@@ -66,5 +66,16 @@ $(document).ready(function(){
         $(this).parent(tgTreeP).toggleClass('toggle');
     }); 
 
+    //console.log($('.is-toggle-box').length);
 
-})
+    let sortValue = $('.is-contents-box .is-toggle-box').length;
+    let btnsTarget = $('.is-drop-btns .is-btn');
+    let tmpObj = $(this).closest('.is-contents-box .is-toggle-box');
+    let tmpObjIndex = $(tmpObj).index();
+
+    $(btnsTarget).on('click', function(){
+      $(this).closest('.is-toggle-box').css('background-color', 'red');
+      //$(this).closest('.is-toggle-box').prev().appendTo('.is-toggle-box');
+      //console.log(tmpObjIndex);
+    });
+}) 
