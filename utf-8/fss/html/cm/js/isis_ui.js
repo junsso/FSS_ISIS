@@ -1,5 +1,18 @@
 $(document).ready(function(){
 
+    //우측 퀵메뉴
+    $(window).scroll(function () {
+      let quickMenu = $('.is-quick-menu');
+      let quickMenuOffset = $(quickMenu).offset().top;
+
+      if($(this).scrollTop() >= quickMenuOffset ){	
+        //alert('asfsdf');
+        $(quickMenu).addClass('fixed');
+      } else {
+        $(quickMenu).removeClass('fixed');
+      }
+   });
+
     //snb
     let isToggleTitle = $('.is-toggle-box .is-title-bar .is-arrow');
     let isToggleConts = $('.is-toggle-contents');
