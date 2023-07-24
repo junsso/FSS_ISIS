@@ -1,5 +1,18 @@
 $(document).ready(function(){
 
+    //우측 퀵메뉴
+    $(window).scroll(function () {
+      let quickMenu = $('.is-quick-menu');
+      let quickMenuOffset = $(quickMenu).offset().top;
+
+      if($(this).scrollTop() >= quickMenuOffset ){	
+        //alert('asfsdf');
+        $(quickMenu).addClass('fixed');
+      } else {
+        $(quickMenu).removeClass('fixed');
+      }
+  });
+
     //snb
     let isToggleTitle = $('.is-toggle-box .is-title-bar .is-arrow');
     let isToggleConts = $('.is-toggle-contents');
@@ -65,6 +78,26 @@ $(document).ready(function(){
         $(this).parent(tgTreeP).find(tgTreeUb).stop().slideToggle(300);
         $(this).parent(tgTreeP).toggleClass('toggle');
     }); 
+
+    //업무시스템 위치 이동
+    let upBtn = $('.is-contents-item .is-toggle-box .up');
+    let downBtn = $('.is-contents-item .is-toggle-box .down');
+    let objParents = $('.is-contents-item .is-toggle-box');
+
+    $(upBtn).on('click', function(){
+      let item = $(this).closest(objParents); 
+      let prev = $(item).prev();
+      if(prev.length > 0){ 
+        $(item).insertBefore(prev);
+      }
+    });
+    $(downBtn).on('click', function(){
+      let item = $(this).closest(objParents);
+      let next = $(item).next();
+      if(next.length > 0){
+        $(item).insertAfter(next);
+      }
+    });
 
 
 })

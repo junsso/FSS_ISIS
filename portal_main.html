@@ -3,8 +3,8 @@
 	<head>
 		<meta charset="UTF-8">
 		<meta http-equiv="imagetoolbar" content="no" />
-		<meta name="title" content="ISIS ?��?�� �?�? ?��?��?��"/> 
-		<title>?�� ISIS ?��?�� �?�? ?��?��?�� ?��</title>
+		<meta name="title" content="ISIS 통합 관리 시스템"/> 
+		<title>☞ ISIS 통합 관리 시스템 ☜</title>
 		<link rel="stylesheet" href="fss/html/cm/css/jquery-ui.css"/>
 		<link rel="stylesheet" href="fss/html/cm/css/contents.css"/>
 		<script src="fss/html/cm/js/jquery-1.9.1.js"></script>
@@ -12,17 +12,17 @@
 		<script src="fss/html/cm/js/jquery.cookie.js"></script>
 		<script type="text/javascript">
 			$(function() {
-				//마우?�� ?���? ?��벤트 처리 ?��?��(처리 �? : true, ?��벤트 ?��?�� : false)
+				//마우스 오버 이벤트 처리 상태(처리 중 : true, 이벤트 없음 : false)
 				var eff1 = false;
 		
-				//카테고리�? div object
+				//카테고리별 div object
 				var cat_div_arr = new Array(2);
 				cat_div_arr[0] = $("#cat_bis");
 				cat_div_arr[1] = $("#cat_area");
 				//cat_div_arr[1] = $("#cat_private");
 				//cat_div_arr[2] = $("#cat_area");
 		
-				//카테고리�? contents open div object
+				//카테고리별 contents open div object
 				var cntn_open_div_arr = new Array(2);
 				cntn_open_div_arr[0] = $("#cat_bis_content");
 				cntn_open_div_arr[1] = $("#cat_area_content");
@@ -31,7 +31,7 @@
 				title_open_div_arr[0] = $("#cat_bis_title");
 				title_open_div_arr[1] = $("#cat_area_title");
 		
-				//카테고리�? contents close div object
+				//카테고리별 contents close div object
 				var cntn_close_div_arr = new Array(2);
 				cntn_close_div_arr[0] = $("#cat_bis_content_close");
 				cntn_close_div_arr[1] = $("#cat_area_content_close");
@@ -40,7 +40,7 @@
 				title_close_div_arr[0] = $("#cat_bis_title_close");
 				title_close_div_arr[1] = $("#cat_area_title_close");
 		
-				//카테고리�? div left ?���? �?
+				//카테고리별 div left 위치 값
 				var cat_div_pos_arr = new Array(2);
 		
 				var openwidth = 926; 
@@ -53,7 +53,7 @@
 		
 				var faver_visibility = true;
 		
-				//최초 open div ?��?�� �? �? div ?���? ?��?��
+				//최초 open div 설정 및 각 div 위치 설정
 				function initDiv() {
 					if (faver_visibility == true) {
 						favorWidth = 106;
@@ -75,10 +75,10 @@
 						openCategoryIndex = parseInt(openCategory);
 					}
 		
-					//?���? ?��?��
+					//위치 설정
 					setPosition(openCategoryIndex);
 		
-					//open ?��?��
+					//open 설정
 					if (openCategoryIndex == 0) {
 						closeDiv(1);
 						openDiv(0);						
@@ -124,10 +124,10 @@
 //							+ "')");
 				}			
 		
-				//?��면초기화
+				//화면초기화
 				initDiv();
 		
-				//카테고리�? div ?���? ?��?��
+				//카테고리별 div 위치 설정
 				function setPosition(openCategoryIndex) {
 					if (faver_visibility == true) {
 						favorWidth = 216;
@@ -286,7 +286,7 @@
 						openCategoryIndex = parseInt(openCategory);
 					}
 		
-					//?���? ?��?��
+					//위치 설정
 					setPosition(openCategoryIndex);
 //					$("#cat_link").css('left','216px');
 					cat_div_arr[0].css('left', cat_div_pos_arr[0] + 'px');
@@ -307,7 +307,7 @@
 						openCategoryIndex = parseInt(openCategory);
 					}
 		
-					//?���? ?��?��
+					//위치 설정
 					setPosition(openCategoryIndex);
 //					$("#cat_link").css('left','25px');
 		
@@ -319,7 +319,7 @@
 					if (this.id != 'more')
 						return;
 					var dialog_height = 555;
-					//?��벤트�? 발생?�� more버튼?�� ?��?�� div ?���?
+					//이벤트가 발생한 more버튼의 상위 div 위치
 					var s_cat_div = $(this).parent().parent();
 					var s_cat_div_cont = s_cat_div.children('#cont');
 					var s_cat_div_left = s_cat_div.offset().left;
@@ -330,7 +330,7 @@
 					var clone_div = s_cat_div_cont.clone(true);
 					clone_div.css("top", "5px");
 					
-					//참조 :jquery-ui.js ?�� widget( "ui.dialog"
+					//참조 :jquery-ui.js 의 widget( "ui.dialog"
 					//css  :jquery-ui.css
 					clone_div.dialog({
 						disabled : false,
@@ -397,7 +397,7 @@
 					openCategoryIndex = parseInt(openCategory);
 				}
 
-				//open ?��?��
+				//open 설정
 				if (openCategoryIndex == 0) {
 					var bizOpen = $.cookie('isis_main_cat_biz_open');
 					if(bizOpen!=null && bizOpen != ''){
@@ -765,7 +765,7 @@
 			function findTxtFocusIn(obj){
 				var objVal = obj.value;
 				
-				if('직접?��?��' == objVal){
+				if('직접입력' == objVal){
 					obj.value='';
 				}
 			}
@@ -773,7 +773,7 @@
 				var objVal = obj.value;
 				
 				if('' == objVal){
-					obj.value='직접?��?��';
+					obj.value='직접입력';
 				}
 			}
 			
@@ -927,12 +927,12 @@
 			
 		</script>
 
-        <!-- [추�??] isis 메인 �??�� -->
+        <!-- [추가] isis 메인 관련 -->
 		<link rel="stylesheet" href="fss/html/cm/css/swiper.min.css"/>
         <link rel="stylesheet" href="fss/html/cm/css/isis_portal_main.css"/>
 		<script src="fss/html/cm/js/swiper.min.js" ></script>
         <script src="fss/html/cm/js/isis_ui.js"></script>
-        <!-- // isis 메인 �??�� // -->
+        <!-- // isis 메인 관련 // -->
 </head>
 <body onload='initCatHeight();'>
 
@@ -944,16 +944,16 @@
 	</form>  -->
     
 
-    <!-- [추�??] start : ISIS 메인 -->
+    <!-- [추가] start : ISIS 메인 -->
     <div class="is-main-contain">
         <div class="is-inner">
 
             <div class="is-left-area">
-                <!-- 최근 ?���? ?��?��?�� ?���? ?��?��?�� -->
+                <!-- 최근 자주 사용한 업무 시스템 -->
                 <div class="is-fv-system">
                     <div class="is-title-box">
-						<p class="desc">최근 ?���? ?��?��?�� ?���? ?��?��?��(3개월 기�??)</p>
-                        <h3 class="is-title">ISIS <span>?��주찾?��</span> ?���? ?��?��?��</h3>
+						<p class="desc">최근 자주 사용한 업무 시스템(3개월 기준)</p>
+                        <h3 class="is-title">ISIS <span>자주찾는</span> 업무 시스템</h3>
 						<div class="is-indicator">
 							<div class="swiper-pagination"></div>
 							<div class="is-button-box">
@@ -967,25 +967,25 @@
 						<div class="swiper-container">
 							<div class="swiper-wrapper">
 								<div class="swiper-slide">
-									<a href="#"><span>금융?���? 종합분석1</span></a>
+									<a href="#"><span>금융정보 종합분석1</span></a>
 								</div>
 								<div class="swiper-slide">
-									<a href="#"><span>???�??��감독</span></a>
+									<a href="#"><span>대부업감독</span></a>
 								</div>
 								<div class="swiper-slide">
-									<a href="#"><span>?��?���?�?�?</span></a>
+									<a href="#"><span>인허가관리</span></a>
 								</div>
 								<div class="swiper-slide">
-									<a href="#"><span>금융?���? 종합분석 금융?���? 종합분석 금융?���? 종합분석4</span></a>
+									<a href="#"><span>금융정보 종합분석 금융정보 종합분석 금융정보 종합분석4</span></a>
 								</div>
 								<div class="swiper-slide">
-									<a href="#"><span>금융?���? 종합분석 금융?���? 종합분석5</span></a>
+									<a href="#"><span>금융정보 종합분석 금융정보 종합분석5</span></a>
 								</div>
 								<div class="swiper-slide">
-									<a href="#"><span>금융?���? 종합분석6</span></a>
+									<a href="#"><span>금융정보 종합분석6</span></a>
 								</div>
 								<div class="swiper-slide">
-									<a href="#"><span>금융?���? 종합분석7</span></a>
+									<a href="#"><span>금융정보 종합분석7</span></a>
 								</div>
 							</div>
 						</div>
@@ -993,46 +993,46 @@
                 </div>
                 <!-- // END -->
 
-                <!-- ?���? ?��무시?��?�� -->
+                <!-- 전체 업무시스템 -->
                 <div class="is-all-system">
                     <div class="is-title-box">
 						<div class="is-inner">
-							<h3 class="is-title">?���? ?��무시?��?��</h3>
+							<h3 class="is-title">전체 업무시스템</h3>
 							<div class="is-search-box">
 								<label for="is-search">
-									<input type="text" id="is-search" placeholder="?���? ?��?��?��명을 ?��?��?��주세?��."/>
+									<input type="text" id="is-search" placeholder="업무 시스템명을 입력해주세요."/>
 								</label>
-								<button type="button" class="is-btn">�??��</button>
+								<button type="button" class="is-btn">검색</button>
 							</div>
 						</div>
                     </div>
                     <div class="is-contents-box">
                         <div class="is-switch-box">
 							<div class="is-form-wrap">
-								<h3 class="is-title">?��?��</h3>
+								<h3 class="is-title">정렬</h3>
 								<div class="is-tab-ui is-tab-ui-js-menu">
 									<ul class="is-tab">
 										<li class="is-tab-multi-toggle is-tab-ui-js-target current">
-											<button type="button" class="is-multi-toggle-btn">권역�?</button>
+											<button type="button" class="is-multi-toggle-btn">권역별</button>
 										</li>
 										<li class="is-tab-multi-toggle is-tab-ui-js-target">
-											<button type="button" class="is-multi-toggle-btn">?��무별</button>
+											<button type="button" class="is-multi-toggle-btn">업무별</button>
 										</li>
 									</ul>
 								</div>
 							</div>
 							<div class="is-form-wrap">
-								<h3 class="is-title">권한?��?��?��</h3>
+								<h3 class="is-title">권한시스템</h3>
 								<div class="label-box">
 									<input role="switch" type="checkbox" class="is-input" id="switchLabel"/>
-									<label for="switchLabel">권한 ?��?��?���? 보기</label>
+									<label for="switchLabel">권한 시스템만 보기</label>
 								</div>
 							</div>
 							<div class="is-form-wrap">
-								<h3 class="is-title">?��?��?�� 보기</h3>
+								<h3 class="is-title">시스템 보기</h3>
 								<div class="label-box">
 									<input role="switch" type="checkbox" class="is-input" id="switchLabel2"/>
-									<label for="switchLabel2">(�?)?��?��?���? 보기</label>
+									<label for="switchLabel2">(구)시스템만 보기</label>
 								</div>
 							</div>
                         </div>
@@ -1044,23 +1044,23 @@
 										<button type="button" class="is-btn up"></button>
 										<button type="button" class="is-btn down"></button>
 									</div>
-									<h4 class="is-title">감독 ?��무시?��?��</h4>
+									<h4 class="is-title">감독 업무시스템</h4>
 									<button type="button" class="is-arrow"></button>
 								</div>
 								<div class="is-toggle-contents" style="display: block;">
 									<div class="is-inner">
-										<!-- 권한 ?��?�� ?��?��?��??? authority�? ?��?�� , �??��?�� ?��?��?�� ?��?��?��?��?��?��  <p class="highlight">�??��?��</p> ?��?�� -->
+										<!-- 권한 있는 시스템은 authority를 사용 , 검색어 입력후 하이라이트는  <p class="highlight">검색어</p> 적용 -->
 										<ul class="is-list-box">
-											<li class="authority"><a href="#"><span><p class="highlight">금융</p>?���? 종합분석</span></a></li>
-											<li class="authority"><a href="#"><span>???�??��감독</span></a></li>
-											<li class="authority"><a href="#"><span>?��?���?�?�?</span></a></li>
-											<li><a href="#"><span>?��?��감독조사�??��</span></a></li>
-											<li><a href="#"><span>?��계감�?</span></a></li>
-											<li><a href="#"><span>?��?��공여?���?</span></a></li>
-											<li><a href="#"><span><p class="highlight">금융</p>?��?��조기경보</span></a></li>
-											<li><a href="#"><span>집합?��?��기구보고?��조회</span></a></li>
-											<li><a href="#"><span>보험?��?�� 책임�?비금?���?</span></a></li>
-											<li><a href="#"><span>????��?��?��리스?��?��?���??��</span></a></li>
+											<li class="authority"><a href="#"><span><p class="highlight">금융</p>정보 종합분석</span></a></li>
+											<li class="authority"><a href="#"><span>대부업감독</span></a></li>
+											<li class="authority"><a href="#"><span>인허가관리</span></a></li>
+											<li><a href="#"><span>외환감독조사지원</span></a></li>
+											<li><a href="#"><span>회계감리</span></a></li>
+											<li><a href="#"><span>신용공여정보</span></a></li>
+											<li><a href="#"><span><p class="highlight">금융</p>산업조기경보</span></a></li>
+											<li><a href="#"><span>집합투자기구보고서조회</span></a></li>
+											<li><a href="#"><span>보험회사 책임준비금평가</span></a></li>
+											<li><a href="#"><span>은행신용리스크승인지원</span></a></li>
 										</ul>
 										<!-- // -->
 									</div>
@@ -1073,16 +1073,16 @@
 										<button type="button" class="is-btn up"></button>
 										<button type="button" class="is-btn down"></button>
 									</div>
-									<h4 class="is-title">조사 ?��무시?��?��</h4>
+									<h4 class="is-title">조사 업무시스템</h4>
 									<button type="button" class="is-arrow"></button>
 								</div>
 								<div class="is-toggle-contents" style="display: block;">
 									<div class="is-inner">
-										<!-- 권한 ?��?�� ?��?��?��??? authority�? ?��?�� , �??��?�� ?��?��?�� ?��?��?��?��?��?��  <p class="highlight">�??��?��</p> ?��?�� -->
+										<!-- 권한 있는 시스템은 authority를 사용 , 검색어 입력후 하이라이트는  <p class="highlight">검색어</p> 적용 -->
 										<ul class="is-list-box">
-											<li class="authority highlight"><a href="#"><span><p class="highlight">금융</p>?���? 종합분석</span></a></li>
-											<li><a href="#"><span>???�??��감독</span></a></li>
-											<li><a href="#"><span>?��?���?�?�?</span></a></li>
+											<li class="authority highlight"><a href="#"><span><p class="highlight">금융</p>정보 종합분석</span></a></li>
+											<li><a href="#"><span>대부업감독</span></a></li>
+											<li><a href="#"><span>인허가관리</span></a></li>
 										</ul>
 										<!-- // -->
 									</div>
@@ -1095,23 +1095,23 @@
 										<button type="button" class="is-btn up"></button>
 										<button type="button" class="is-btn down"></button>
 									</div>
-									<h4 class="is-title">?��비자보호 ?��무시?��?��</h4>
+									<h4 class="is-title">소비자보호 업무시스템</h4>
 									<button type="button" class="is-arrow"></button>
 								</div>
 								<div class="is-toggle-contents" style="display: block;">
 									<div class="is-inner">
-										<!-- 권한 ?��?�� ?��?��?��??? authority�? ?��?�� , �??��?�� ?��?��?�� ?��?��?��?��?��?��  <p class="highlight">�??��?��</p> ?��?�� -->
+										<!-- 권한 있는 시스템은 authority를 사용 , 검색어 입력후 하이라이트는  <p class="highlight">검색어</p> 적용 -->
 										<ul class="is-list-box">
-											<li class="authority"><a href="#"><span><p class="highlight">금융</p>?���? 종합분석</span></a></li>
-											<li class="authority"><a href="#"><span>???�??��감독</span></a></li>
-											<li class="authority"><a href="#"><span>?��?���?�?�?</span></a></li>
-											<li><a href="#"><span>?��?��감독조사�??��</span></a></li>
-											<li><a href="#"><span>?��계감�?</span></a></li>
-											<li><a href="#"><span>?��?��공여?���?</span></a></li>
-											<li><a href="#"><span><p class="highlight">금융</p>?��?��조기경보</span></a></li>
-											<li><a href="#"><span>집합?��?��기구보고?��조회</span></a></li>
-											<li><a href="#"><span>보험?��?�� 책임�?비금?���?</span></a></li>
-											<li><a href="#"><span>????��?��?��리스?��?��?���??��</span></a></li>
+											<li class="authority"><a href="#"><span><p class="highlight">금융</p>정보 종합분석</span></a></li>
+											<li class="authority"><a href="#"><span>대부업감독</span></a></li>
+											<li class="authority"><a href="#"><span>인허가관리</span></a></li>
+											<li><a href="#"><span>외환감독조사지원</span></a></li>
+											<li><a href="#"><span>회계감리</span></a></li>
+											<li><a href="#"><span>신용공여정보</span></a></li>
+											<li><a href="#"><span><p class="highlight">금융</p>산업조기경보</span></a></li>
+											<li><a href="#"><span>집합투자기구보고서조회</span></a></li>
+											<li><a href="#"><span>보험회사 책임준비금평가</span></a></li>
+											<li><a href="#"><span>은행신용리스크승인지원</span></a></li>
 										</ul>
 										<!-- // -->
 									</div>
@@ -1124,33 +1124,33 @@
 										<button type="button" class="is-btn up"></button>
 										<button type="button" class="is-btn down"></button>
 									</div>
-									<h4 class="is-title">경영기획 ?��무시?��?��</h4>
+									<h4 class="is-title">경영기획 업무시스템</h4>
 									<button type="button" class="is-arrow"></button>
 								</div>
 								<div class="is-toggle-contents" style="display: block;">
 									<div class="is-inner">
-										<!-- 권한 ?��?�� ?��?��?��??? authority�? ?��?�� , �??��?�� ?��?��?�� ?��?��?��?��?��?��  <p class="highlight">�??��?��</p> ?��?�� -->
+										<!-- 권한 있는 시스템은 authority를 사용 , 검색어 입력후 하이라이트는  <p class="highlight">검색어</p> 적용 -->
 										<ul class="is-list-box">
-											<li class="authority"><a href="#"><span><p class="highlight">금융</p>?���? 종합분석</span></a></li>
-											<li class="authority"><a href="#"><span>???�??��감독</span></a></li>
-											<li class="authority"><a href="#"><span>?��?���?�?�?</span></a></li>
-											<li><a href="#"><span>?��?��감독조사�??��</span></a></li>
-											<li><a href="#"><span>?��계감�?</span></a></li>
-											<li><a href="#"><span>?��?��공여?���?</span></a></li>
-											<li><a href="#"><span><p class="highlight">금융</p>?��?��조기경보</span></a></li>
-											<li><a href="#"><span>집합?��?��기구보고?��조회</span></a></li>
-											<li><a href="#"><span>보험?��?�� 책임�?비금?���?</span></a></li>
-											<li><a href="#"><span>????��?��?��리스?��?��?���??��</span></a></li>
-											<li class="authority"><a href="#"><span><p class="highlight">금융</p>?���? 종합분석</span></a></li>
-											<li class="authority"><a href="#"><span>???�??��감독</span></a></li>
-											<li class="authority"><a href="#"><span>?��?���?�?�?</span></a></li>
-											<li><a href="#"><span>?��?��감독조사�??��</span></a></li>
-											<li><a href="#"><span>?��계감�?</span></a></li>
-											<li><a href="#"><span>?��?��공여?���?</span></a></li>
-											<li><a href="#"><span><p class="highlight">금융</p>?��?��조기경보</span></a></li>
-											<li><a href="#"><span>집합?��?��기구보고?��조회</span></a></li>
-											<li><a href="#"><span>보험?��?�� 책임�?비금?���?</span></a></li>
-											<li><a href="#"><span>????��?��?��리스?��?��?���??��</span></a></li>
+											<li class="authority"><a href="#"><span><p class="highlight">금융</p>정보 종합분석</span></a></li>
+											<li class="authority"><a href="#"><span>대부업감독</span></a></li>
+											<li class="authority"><a href="#"><span>인허가관리</span></a></li>
+											<li><a href="#"><span>외환감독조사지원</span></a></li>
+											<li><a href="#"><span>회계감리</span></a></li>
+											<li><a href="#"><span>신용공여정보</span></a></li>
+											<li><a href="#"><span><p class="highlight">금융</p>산업조기경보</span></a></li>
+											<li><a href="#"><span>집합투자기구보고서조회</span></a></li>
+											<li><a href="#"><span>보험회사 책임준비금평가</span></a></li>
+											<li><a href="#"><span>은행신용리스크승인지원</span></a></li>
+											<li class="authority"><a href="#"><span><p class="highlight">금융</p>정보 종합분석</span></a></li>
+											<li class="authority"><a href="#"><span>대부업감독</span></a></li>
+											<li class="authority"><a href="#"><span>인허가관리</span></a></li>
+											<li><a href="#"><span>외환감독조사지원</span></a></li>
+											<li><a href="#"><span>회계감리</span></a></li>
+											<li><a href="#"><span>신용공여정보</span></a></li>
+											<li><a href="#"><span><p class="highlight">금융</p>산업조기경보</span></a></li>
+											<li><a href="#"><span>집합투자기구보고서조회</span></a></li>
+											<li><a href="#"><span>보험회사 책임준비금평가</span></a></li>
+											<li><a href="#"><span>은행신용리스크승인지원</span></a></li>
 										</ul>
 										<!-- // -->
 									</div>
@@ -1163,7 +1163,7 @@
                 <!-- // END -->
             </div>
 
-            <!-- ?���? ??�메?�� -->
+            <!-- 우측 퀵메뉴 -->
             <article class="is-quick-menu">
                 <div class="is-qu-menu-box">
                     <div class="is-top">
@@ -1174,19 +1174,19 @@
 							<li class="is-item01">
 								<a href="#">
 									<span class="is-ico ico01"></span>
-									<p>ISIS 권한 �?�?</p>
+									<p>ISIS 권한 관리</p>
 								</a>
 							</li>
 							<li class="is-item02">
 								<a href="#">
 									<span class="is-ico ico02"></span>
-									<p>?��?��?�� 개요 조회</p>
+									<p>시스템 개요 조회</p>
 								</a>
 							</li>
 							<li class="is-item03">
 								<a href="#">
 									<span class="is-ico ico03"></span>
-									<p>ISIS ?��?��?��<br/>?��?�� 조회</p>
+									<p>ISIS 사용자<br/>실적 조회</p>
 								</a>
 							</li>
 						</ul>
@@ -1200,7 +1200,7 @@
     <!-- // End : ISIS 메인 // -->
 
 	<script>
-		//?���? ??�메?��
+		//우측 퀵메뉴
 		$(window).scroll(function () {
 			let quickMenu = $('.is-quick-menu');
 			let quickMenuOffset = $(quickMenu).offset().top;
