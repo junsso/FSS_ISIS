@@ -128,7 +128,7 @@ a {
 .is-main-contain .is-fv-system {
     background: linear-gradient(270.72deg, #D2EDFC 0%, #E5EEF3 100%);
     display: flex;
-    gap: 0 30px;
+    /* gap: 0 30px; */
     padding: 30px 40px;
     position: relative;
 }
@@ -137,7 +137,7 @@ a {
 .is-main-contain .is-fv-system .is-title-box {
     display: flex;
     flex-direction: column;
-    gap: 5px;
+    /* gap: 5px; */
     width: 250px;
 }
 .is-main-contain .is-fv-system .is-title-box .desc{
@@ -523,7 +523,7 @@ a {
 .is-main-contain .is-toggle-box .is-list-box {
     padding-left: 0;
     display: flex;
-    gap: 15px 10px;
+    /* gap: 15px 10px; */
     width: 100%;
     flex-wrap: wrap;
 }
@@ -620,7 +620,7 @@ a {
 }
 .is-popup .is-inner .is-title {
     background-color: #0080C6;
-    min-height: 60px;
+    height: 60px;
     display: flex;
     align-items: center;
     padding: 0 20px;
@@ -661,6 +661,9 @@ a {
     font-weight: 500;
     color: #333;
 }
+.is-popup .is-search-area .is-tab-btn .is-multi-toggle:not(:last-child) {
+    margin-right: 10px;
+}
 .is-popup .is-search-area {
     background-color: #F0F0F0;
     height: 70px;
@@ -684,6 +687,7 @@ a {
     letter-spacing: -1px;
     display: none;
     max-width: calc(100% - 250px - 495px - 40px);
+    padding-left: 20px;
 }
 .is-popup .is-search-area .is-desc.current {
     display: block;
@@ -692,7 +696,7 @@ a {
     margin-left: auto;
     display: flex;
     align-items: center;
-    gap: 5px;
+    /* gap: 5px; */
 }
 .is-popup .is-search-area .is-search-input .is-form-wrap {
     display: flex;
@@ -711,7 +715,7 @@ a {
     border: 0;
 
 }
-.is-popup .is-search-area .is-search-input .is-form-wrap input::placeholder {
+.is-popup .is-search-area .is-search-input .is-form-wrap input:-ms-input-placeholder {
     color: #ccc;
     line-height: 22px;
 }
@@ -733,6 +737,7 @@ a {
     background-color: #444444;
     color: #fff;
     border: 0;
+    margin-left: 5px;
 }
 
 .is-popup .is-tab-contents .is-conts-contain {
@@ -753,7 +758,7 @@ a {
 }
 .is-popup .is-section-box {
     display: flex;
-    gap: 20px;
+    /* gap: 20px; */
     padding: 15px 0 0;
 }
 .is-popup .is-section-box .is-col {
@@ -763,10 +768,11 @@ a {
     height: 100%;
 }
 .is-popup .is-section-box .is-lf-section {
+    margin-right: 20px;
     width: calc(100% - 20px - 400px);
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    /* gap: 20px; */
 }
 .is-popup .is-section-box .is-lf-section .is-col {
     height: 310px;
@@ -776,7 +782,8 @@ a {
     box-sizing: border-box;
 }
 .is-popup .is-section-box .is-lf-section .is-col:first-of-type {
-    background: linear-gradient(97.33deg, #D6F5FF -0.01%, #DDEBFF 99.99%);   
+    background: linear-gradient(97.33deg, #D6F5FF -0.01%, #DDEBFF 99.99%);
+    margin-bottom: 20px;
 }
 .is-popup .is-section-box .is-lf-section .is-col:first-of-type::before {
     content: '';
@@ -804,7 +811,7 @@ a {
 .is-popup .is-section-box .is-lf-section .is-col .is-top-title {
     display: flex;
     align-items: center;
-    gap: 10px;
+    /* gap: 10px; */
     position: relative;
     z-index: 2;
 }
@@ -823,6 +830,7 @@ a {
     background-repeat: no-repeat;
     width: 48px;
     height: 48px;
+    margin-right: 10px;
 }
 .is-popup .is-section-box .is-lf-section .is-col:first-child .is-top-title .is-ico {
     background-image: url('../images/is_ico_system.svg');
@@ -886,13 +894,16 @@ a {
     width: 400px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    /* gap: 20px; */
 }
 .is-popup .is-section-box .is-rt-section .is-col {
     width: 100%;
     height: 200px;
     border: 1px solid #E6E6E6;
     box-sizing: border-box;
+}
+.is-popup .is-section-box .is-rt-section .is-col:not(:first-child) {
+    margin-top: 20px;
 }
 .is-popup .is-section-box .is-rt-section .is-col:first-child {
     background: url('../images/is_bg_manager.svg')no-repeat right bottom;
@@ -908,7 +919,7 @@ a {
     height: 50px;
     display: flex;
     align-items: center;
-    gap: 8px;
+    /* gap: 8px; */
     padding: 0 15px;
 }
 .is-popup .is-section-box .is-list-box .is-col .is-top-title h3 {
@@ -926,6 +937,7 @@ a {
     height: 34px;
     border-radius: 100%;
     box-shadow: 0 2px 6px 0 rgba(0,0,0,0.16);
+    margin-right: 8px;
 }
 .is-popup .is-section-box .is-rt-section .is-col:first-child .is-top-title .is-ico {
     background-image: url('../images/is_ico_manager.svg');
@@ -951,6 +963,9 @@ a {
     text-overflow: ellipsis;
     position: relative;
     padding-left: 8px;
+}
+.is-popup .is-list-style li:not(:last-child) {
+    padding-bottom:4px;
 }
 .is-popup .is-list-style li::before {
     content: '';
@@ -983,7 +998,7 @@ a {
     text-decoration: underline;
 }
 .is-popup .is-list-style.initial li {
-    white-space: initial;
+    white-space: inherit;
 }
 
 .is-popup .is-bottom-area {
@@ -1031,7 +1046,7 @@ a {
 }
 
 .is-popup .keyword .is-conts.lf .is-section-box .is-lf-section {
-    width: calc(100% - 295px - 20px);
+    width: calc(100% - 305px);
 }
 .is-popup .keyword .is-conts.lf .is-section-box .is-rt-section {
     width: 295px;
@@ -1040,18 +1055,20 @@ a {
     background-image: url('../images/is_ico_manager4.svg');
 }
 .is-popup .keyword .is-conts.rt {
-    width: 285px;
+    width: calc(305px - 20px);
+    margin-left: 20px;
 }
 .is-popup .keyword .is-conts.rt .is-title-box {
     border-bottom: 0;
 }
 .is-popup .keyword .is-conts.rt .is-section-box {
     /*height: calc(100% - 69px - 15px);*/
-    height: 655px;
+    height: 656px;
     box-sizing: border-box;
 }
 .is-popup .keyword .is-conts.rt .is-section-box .is-rt-section {
     width: 100%;
+    margin-top: 2px;
 }
 .is-popup .keyword .is-conts.rt .is-section-box .is-rt-section .is-col {
     height: 100%;
@@ -1065,7 +1082,7 @@ a {
 .is-popup .is-tree {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    /* gap: 10px; */
     padding-left: 0;
 }
 .is-popup .is-tree > li {
@@ -1076,6 +1093,9 @@ a {
 }
 .is-popup .is-tree > li:not(:last-child) {
     border-bottom: 1px solid #EFEFEF;
+}
+.is-popup .is-tree > li:not(:first-child) {
+    margin-top: 10px;
 }
 .is-popup .is-tree > li > a {
     font-size: 13px;
