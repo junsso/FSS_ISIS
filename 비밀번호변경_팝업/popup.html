@@ -9,15 +9,104 @@
 		<!-- [추가] 기존 isis_portal_main.css에 css 소스 복붙 해주세요 -->
         <link rel="stylesheet" href="fss/html/cm/css/isis_portal_main.css"/>	
 		<!-- // End 추가-->
-
-		<script src="fss/html/cm/js/jquery-1.9.1.js"></script>
-		<!--<script src="fss/html/cm/js/common.js?v=20170530" charset="euc-kr"></script> -->
 	</head>	
 	<body>
+		<!-- Start : 비밀번호 변경 팝업 -->
 		<div class="is-security-popup">
 			<div class="is-inner">
-				<p>노토산스</p>
+				<div class="is-contents">
+					<div class="is-title">
+						<h2>
+							정기적인 <span class="orange">비밀번호 변경</span>이<br>
+							<span class="point"><em>소</em><em>중</em><em>한</em> <em>정</em><em>보</em></span>를 지킵니다.
+						</h2>
+						<i class="ico"></i>
+					</div>
+					<div class="is-info-box">
+						<div class="is-conts info">
+							<div class="is-title-box">
+								<h3 class="">비밀번호 변경 안내</h3>
+							</div>
+							<div class="is-desc-box">
+								<p class="desc">
+									직원 여러분의 <span class="blue">개인정보 유출과</span><br/> 
+									<span class="blue">도용으로 인한피해를 예방</span>하기 위하여 <br/> 
+									<span class="blue">3개월마다 정기적인 비밀번호변경</span> <br/>
+									캠페인을 시행하고 있습니다.<br/>
+									<span class="bold">우측의 <em class="important">비밀번호 보안 규정</em>을 참고하시기 바랍니다.</span>
+								</p>
+							</div>
+						</div>
+						<div class="is-conts rule">
+							<div class="is-title-box">
+								<h3 class="">비밀번호 보안 규정</h3>
+							</div>
+							<div class="is-desc-box">
+								<ul>
+									<li><span class="point">9자리~15자리</span>로 설정해야 합니다.</li>
+									<li>
+										<span class="point">영문,숫자,특수기호</span>를 조합해야 합니다.<br/>
+										<p class="dsc">
+											(예 : isis@2013, 2013^isis)<br/>
+											사용 가능 특수기호 : `! @ # $ ^ * ( ) _ -
+										</p>
+									</li>
+									<li>'123'등 <span class="point">연속숫자</span>는 사용이 <span class="point">불가</span>합니다.</li>
+									<li><span class="point">이전 비밀번호</span>는 사용이 <span class="point">불가</span>합니다.</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="is-modify-box">
+						<div class="is-inner">
+							<div class="top">
+								<h3>비밀번호를 수정해 주시기 바랍니다.</h3>
+							</div>
+							<div class="body">
+								<form action="">
+									<table>
+										<tr>
+											<th>현재 비밀번호</th>
+											<td><input type="text"></td>
+										</tr>
+										<tr>
+											<th>새 비밀번호</th>
+											<td>
+												<input type="text">
+												<div class="is-security">
+													<p class="is-sc good">안전</p>
+													<!-- <p class="is-sc normal">보통</p>
+													<p class="is-sc danger">위험</p> -->
+												</div>
+											</td>
+										</tr>
+										<tr>
+											<th>새 비밀번호 확인</th>
+											<td><input type="text"></td>
+										</tr>
+									</table>
+									<button type="submit" class="submit-btn">변경하기</button>
+								</form>
+							</div>
+							<div class="bottom">
+								<div class="is-security-box">
+									<div class="is-title">
+										<h4>보안등급</h4>
+									</div>
+									<div class="is-security">
+										<ul>
+											<li><p class="is-sc good">안전</p> <span class="desc">보안규정 4가지를 모두 준수하여 비밀번호를 변경한 경우</span></li>
+											<li><p class="is-sc normal">보통</p> <span class="desc">영문-숫자 조합 또는 영문-특수문자 조합 등 보안규정 일부를 준수한 경우</span></li>
+											<li><p class="is-sc danger">위험</p> <span class="desc">영문 또는 숫자로만 이루어진 비밀번호</span></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
+		<!-- // End-->
 	</body>
 </html>

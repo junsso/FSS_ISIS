@@ -1,25 +1,415 @@
 @charset "UTF-8";
 
 
-/******** 여기부터 css 복사해서 붙여 넣어주세요 **********/
-/* @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;500;700&display=swap'); */
+/******** 여기부터 css 복사해서 isis_portal_main.css내 제일 하단에 붙여 넣어주세요 **********/
+/****** 비밀번호 변경 팝업 ******/
 @font-face {
-    font-family: 'Noto Sans KR';
-    font-weight: 300;
-    src: url('../font/NotoSansKR-Regular.woff') format('woff');
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 300;
+	src: local('Noto Sans Light'), local('NotoSans-Light'),
+		url("../font/NotoSansKr-Light.eot"),
+		url("../font/NotoSansKr-Light.woff") format('woff'),
+		url("../font/NotoSansKr-Light.otf") format('opentype');
 }
-/* @font-face {
-    font-family: 'Noto Sans KR';
-    font-style: normal;
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 400;
+	src: local('Noto Sans Regular'), local('NotoSans-Regular'),
+		url("../font/NotoSansKr-Regular.eot"),
+		url("../font/NotoSansKr-Regular.woff") format('woff'),
+		url("../font/NotoSansKr-Regular.otf") format('opentype');
+}
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 500;
+	src: local('Noto Sans Medium'), local('NotoSans-Medium'),
+		url("../font/NotoSansKr-Medium.eot"),
+		url("../font/NotoSansKr-Medium.woff") format('woff'),
+		url("../font/NotoSansKr-Medium.otf") format('opentype');
+}
+@font-face {
+	font-family: 'Noto Sans KR';
+	font-style: normal;
+	font-weight: 700;
+	src: local('Noto Sans Bold'), local('NotoSans-Bold'),
+		url("../font/NotoSansKr-Bold.eot"),
+		url("../font/NotoSansKr-Bold.woff") format('woff'),
+		url("../font/NotoSansKr-Bold.otf") format('opentype');
+} 
+.is-security-popup {
+    min-width: 650px;
+    max-width: 650px;
+    margin: 0 auto;
+}
+.is-security-popup * { 
+    font-family: "Noto Sans KR","Nanum Gothic","나눔고딕","맑은고딕","malgun gothic","AppleGothic","돋움","dotum",sans-serif;
+    font-weight: 400;
+    color: #000;
+    padding: 0;
+    margin: 0;
+    line-height: 1.12;
+}
+.is-security-popup ul li {
+    list-style: none;
+}
+.is-security-popup > .is-inner {
+    background-color: #DCE8F1;
+    position: relative;
+}
+.is-security-popup > .is-inner::before {
+    content: '';
+    display: block;
+    position: absolute;
+    background: linear-gradient(0.25turn,#BFD5F5, #BBE2EF);
+    width: 100%;
+    height: 320px;
+}
+.is-security-popup .is-contents {
+    position: relative;
+    padding: 40px;
+}
+
+/*타이틀*/
+.is-security-popup .is-contents .is-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.is-security-popup .is-contents .is-title h2 {
+    font-size: 38px;
     font-weight: 500;
-    src: url('../font/NotoSansKR-Medium.woff2') format('woff2');
+    position: relative;
+    letter-spacing: -2px;
 }
-@font-face {
-    font-family: 'Noto Sans KR';
+.is-security-popup .is-contents .is-title .ico {
+    display: block;
+    background: url('../images/Fss_title_logo.svg')no-repeat center / contain;
+    width: 125px;
+    height: 117px;
+    margin-left: 25px;
+}
+.is-security-popup .is-contents .is-title .orange {
+    font-weight: 700;
+    color: #F26600;
+}
+.is-security-popup .is-contents .is-title .point {
+    position: relative;
+}
+.is-security-popup .is-contents .is-title .point::after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 20px;
+    background-color: #FFC193;
+    position: absolute;
+    left: 0;
+    bottom: 8px;
+    z-index: 1;
+}
+.is-security-popup .is-contents .is-title .point em {
+    font-style: normal;
+    font-size: 52px;
+    font-weight: 700;
+    line-height: 1.7;
+    color: #0359D6;
+    display: inline-block;
+    position: relative;
+    z-index: 2;
+}
+.is-security-popup .is-contents .is-title .point em::before {
+    content: '';
+    display: block;
+    background-color: #0359D6;
+    width: 8px;
+    height: 8px;
+    border-radius: 100%;
+    position: absolute;
+    top: 9px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/*비밀번호 변경 안내 , 비밀번호 보안 규정*/
+.is-security-popup .is-info-box {
+    display: flex;
+    background-color: rgba(255,255,255,0.8);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.1);
+    height: 200px;
+    margin-top: 15px;
+    position: relative;
+    padding: 20px 0;
+}
+.is-security-popup .is-info-box::before {
+    content: '';
+    display: block;
+    width: 1px;
+    height: calc(100% - 40px);
+    background-color: #E2E2E2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+}
+.is-security-popup .is-info-box .is-conts {
+    flex: 1;
+    padding: 0 20px;
+}
+.is-security-popup .is-info-box .is-conts .is-title-box {
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.is-security-popup .is-info-box .is-conts .is-title-box h3 {
+    font-size: 18px;
+    color: #333;
+    font-weight: 700;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+.is-security-popup .is-info-box .is-conts .is-title-box h3::before {
+    content: '';
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 40px;
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.is-security-popup .is-info-box .is-conts.info .is-title-box h3::before {
+    background-image: url('../images/Fss_ps_ico_01.svg');
+}
+.is-security-popup .is-info-box .is-conts.rule .is-title-box h3::before {
+    background-image: url('../images/Fss_ps_ico_02.svg');
+}
+.is-security-popup .is-info-box .is-desc-box {
+    margin-top: 10px;
+}
+.is-security-popup .is-info-box .is-desc-box .desc {
+    word-wrap: break-word;
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 1.45;
+}
+.is-security-popup .is-info-box .is-desc-box .desc .blue {
+    font-weight: 500;
+    color: #0359D6;
+}
+.is-security-popup .is-info-box .is-desc-box .desc .bold {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.4;
+    color: #666;
+    display: block;
+    margin-top: 10px;
+}
+.is-security-popup .is-info-box .is-desc-box .desc .bold .important {
     font-style: normal;
     font-weight: 700;
-    src: url('../font/NotoSansKR-Bold.woff2') format('woff2');
-} */
-.is-security-popup p { 
-    font-family: 'Noto Sans KR','Sans-serif','Malgun Gothic';
+    color: #F26600;
+}
+.is-security-popup .is-info-box .is-conts.rule ul li {
+    font-size: 13px;
+    color: #666;
+}
+.is-security-popup .is-info-box .is-conts.rule ul li:not(:first-child){
+    padding-top: 10px;
+}
+.is-security-popup .is-info-box .is-conts.rule ul li::before {
+    content: '';
+    display: inline-block;
+    font-size: 12px;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    background-color: #D7E5F9;
+    border: 1px solid #B8C8DE;
+    border-radius: 2px;
+    color: #333;
+    font-size: 12px;
+    text-align: center;
+    margin-right: 5px;
+}
+.is-security-popup .is-info-box .is-conts.rule ul li:nth-child(1):before {
+    content: '1';
+}
+.is-security-popup .is-info-box .is-conts.rule ul li:nth-child(2):before {
+    content: '2';
+}
+.is-security-popup .is-info-box .is-conts.rule ul li:nth-child(3):before {
+    content: '3';
+}
+.is-security-popup .is-info-box .is-conts.rule ul li:nth-child(4):before {
+    content: '4';
+}
+.is-security-popup .is-info-box .is-conts.rule .dsc {
+    line-height: 1.4;
+    margin-top: 5px;
+}
+.is-security-popup .is-info-box .is-conts.rule .point {
+    color: #666;
+    font-weight: 700;
+}
+/*비밀번호 수정*/
+.is-security-popup .is-modify-box {
+    margin-top: 20px;
+    box-shadow: 0 2px 6px 0 rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;  
+}
+.is-security-popup .is-modify-box .is-inner{
+    background-color: #fff;
+}
+.is-security-popup .is-modify-box .is-inner .top{
+    background-color: #5F6B86;
+    padding: 11px 18px;
+}
+.is-security-popup .is-modify-box .is-inner .top h3 {
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    letter-spacing: 0.5px;
+}
+.is-security-popup .is-modify-box .is-inner .top h3::before {
+    content: '';
+    display: inline-block;
+    background: url('../images/Fss_lock.svg')no-repeat center / contain;
+    width: 20px;
+    height: 20px;
+    margin-right: 6px;
+}
+.is-security-popup .is-modify-box .is-inner .body {
+    text-align: center;
+    padding: 25px 80px;
+}
+.is-security-popup .is-modify-box .is-inner .body table {
+    border-collapse: collapse;
+    text-align: left;
+}
+.is-security-popup .is-modify-box .is-inner .body table th {
+    position: relative;
+    padding: 4px 10px;
+    font-size: 12px;
+}
+.is-security-popup .is-modify-box .is-inner .body table th::before {
+    content: '';
+    display: inline-block;
+    width: 3px;
+    height: 3px;
+    background-color: #333;
+    position: absolute;
+    top: 16px;
+    left: 0;
+}
+.is-security-popup .is-modify-box .is-inner .body table td {
+    padding: 4px;
+    display: flex;
+    align-items: center;
+}
+.is-security-popup .is-modify-box .is-inner .body table td input {
+    width: 250px;
+    height: 25px;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+.is-security-popup .is-modify-box .is-inner .is-security {
+
+}
+.is-security-popup .is-modify-box .is-inner .is-security .is-sc {
+    font-size: 12px;
+    color: #333;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+}
+.is-security-popup .is-modify-box .is-inner .is-security .is-sc::before {
+    content: '';
+    display: block;
+    width: 14px;
+    height: 14px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 14px;
+    margin-right: 4px;
+    margin-left: 8px;
+}
+.is-security-popup .is-modify-box .is-inner .is-security .is-sc.good::before {
+    background-image: url('../images/Fss_safety_good.svg');
+}
+.is-security-popup .is-modify-box .is-inner .is-security .is-sc.normal::before {
+    background-image: url('../images/Fss_safety_normal.svg');
+}
+.is-security-popup .is-modify-box .is-inner .is-security .is-sc.danger::before {
+    background-image: url('../images/Fss_safety_danger.svg');
+}
+.is-security-popup .is-modify-box .is-inner .body .submit-btn {
+    width: 140px;
+    height: 34px;
+    line-height: 34px;
+    background-color: #333;
+    color: #fff;
+    border: 0;
+    margin-top: 21px;
+    cursor: pointer;
+}
+
+.is-security-popup .is-modify-box .bottom {
+    background-color: #E8E8E8;
+}
+.is-security-popup .is-modify-box .bottom .is-security-box {
+    padding: 15px 30px;
+    display: flex;
+    align-items: flex-start;
+}
+.is-security-popup .is-modify-box .bottom .is-security-box .is-title h4 {
+    font-size: 14px;
+    font-weight: 500;
+    color: #000;
+    display: flex;
+    align-items: center;
+}
+.is-security-popup .is-modify-box .bottom .is-security-box .is-title h4::before {
+    content: '';
+    display: inline-block;
+    background: url('../images/Fss_shield.svg')no-repeat center / contain;
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+}
+.is-security-popup .is-modify-box .bottom .is-security-box .is-security {
+    margin-left: 20px;
+}
+.is-security-popup .is-modify-box .bottom .is-security-box .is-security ul li {
+    display: flex;
+}
+.is-security-popup .is-modify-box .bottom .is-security-box .is-security ul li:not(:first-child) {
+    padding-top: 7px;
+}
+.is-security-popup .is-modify-box .bottom .is-security-box .is-security .is-sc {
+    font-size: 13px;
+}
+.is-security-popup .is-modify-box .bottom .is-security-box .is-security .is-sc::before {
+    margin-right: 6px;
+    margin-left: 0;
+}
+.is-security-popup .is-modify-box .bottom .is-security-box .is-security .desc {
+    font-size: 12px;
+    color: #666;
+    margin-left: 6px;
+}
+.is-security-popup .is-modify-box .bottom .is-security-box .is-security .desc::before {
+    content: '';
+    display: inline-block;
+    width: 1px;
+    height: 10px;
+    background-color: #bbb;
+    margin-right: 6px;
 }
