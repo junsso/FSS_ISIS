@@ -40,8 +40,8 @@
 		url("../font/NotoSansKr-Bold.otf") format('opentype');
 } 
 .is-security-popup {
-    min-width: 650px;
-    max-width: 650px;
+    min-width: 680px;
+    max-width: 680px;
     margin: 0 auto;
 }
 .is-security-popup * { 
@@ -298,6 +298,7 @@
     position: relative;
     padding: 4px 10px;
     font-size: 12px;
+    text-align: left;
 }
 .is-security-popup .is-modify-box .is-inner .body table th::before {
     content: '';
@@ -317,8 +318,9 @@
 .is-security-popup .is-modify-box .is-inner .body table td input {
     width: 250px;
     height: 25px;
-    padding: 0 10px;
+    padding: 4px;
     box-sizing: border-box;
+    border: 1px solid #ccc;
 }
 .is-security-popup .is-modify-box .is-inner .is-security {
 
