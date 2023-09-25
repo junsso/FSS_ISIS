@@ -20,30 +20,7 @@ $(document).ready(function(){
     $(isToggleTitle).on('click',function(){
       $(this).parents('.is-toggle-box').find(isToggleConts).toggleClass('current');
       $(this).parents('.is-toggle-box').toggleClass('current');
-    });     
-
-    //ISIS자주찾는 업무 시스템
-    // var swiper = new Swiper(".is-fv-list .swiper-container", {
-    //     slidesPerView: 5,
-    //     spaceBetween: 15,
-    //     slidesPerGroup: 5,
-    //     //loop : true,
-    //     //loopFillGroupWithBlank : true,
-    //     watchOverflow: false, //슬라이드가 1개 일 때 pager, button 숨김 여부 설정
-    //     navigation: {
-    //       nextEl: ".is-fv-system .swiper-button-next",
-    //       prevEl: ".is-fv-system .swiper-button-prev",
-    //     },
-    //     pagination: {
-    //       el: ".swiper-pagination",
-    //       type: "fraction",
-    //       renderFraction: function (currentClass, totalClass) {
-    //         return '<span class="' + currentClass + '"></span>' +
-    //                '<em class="line"></em> ' +
-    //                '<span class="' + totalClass + '"></span>';
-    //       }
-    //     },
-    //   });    
+    });    
 
     //tab
     $('.is-tab-ui-js-menu .is-tab-ui-js-target').click(function(){
@@ -108,7 +85,6 @@ $(document).ready(function(){
     //자주찾는 업무 시스템 슬라이드
     console.clear();
 
-    // 상단 메인 배너 슬라이더
     $('.is-fv-system .page-btns .page-btn').click(function(){
         var $clicked = $(this);
         var $slider = $(this).closest('.is-fv-system').find('.slide-container');
