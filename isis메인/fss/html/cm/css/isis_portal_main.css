@@ -164,7 +164,7 @@ a {
 }
 .is-main-contain .is-quick-menu .is-qu-menu-box .is-body ul li a p{
     font-size: 13px;
-    font-weight: 500;
+    font-weight: 600;
     line-height: 1.3;
     color: #333;
     text-align: center;
@@ -195,7 +195,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    width: 225px;
+    width: 230px;
     *float: left;
 }
 .is-main-contain .is-fv-system .is-title-box .desc{
@@ -205,7 +205,7 @@ a {
 }
 .is-main-contain .is-fv-system .is-title-box .is-title {
     font-size: 22px;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: -2px;
     line-height: 1;
     margin-top: 10px;
@@ -303,7 +303,7 @@ a {
 .is-fv-list.ie .slide a span em {
     font-style: normal;
     font-size: 14px;
-    font-weight: 500;
+    font-weight: 600;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -463,6 +463,7 @@ a {
     color: #666666;
     border: 1px solid #CFCFCF;
     font-size: 13px;
+    font-weight: 600;
     line-height: 30px;
     height: 32px;
     flex: 1;
@@ -545,7 +546,7 @@ a {
 .is-main-contain .is-switch-box.ie .label-box label {
     *display: block;
     *background: url('../images/img_switch_bg.png') no-repeat center;
-    *width: 141px;
+    *width: 145px;
     *height: 32px;
     *position: relative;
     *zoom: expression(
@@ -559,8 +560,9 @@ a {
 .is-main-contain .is-switch-box.ie .label-box label span {
     *position: absolute;
     *top: 0;
-    *left: 32px;
+    *left: 29px;
     *font-size: 13px;
+    *font-weight: 600;
     *color: #fff;
     *padding: 0;
 }
@@ -569,10 +571,11 @@ a {
     *content: '';
     *display: block;
     *background: url('../images/img_switch_ball.png') no-repeat center;
-    *width: 24px;
-    *height: 24px;
+    background-size: contain;
+    *width: 22px;
+    *height: 22px;
     *position: absolute;
-    *top: 4px;
+    *top: 5px;
     *left: 4px;
 
 }
@@ -655,7 +658,7 @@ a {
     margin: 0;
     font-size: 18px;
     color: #333;
-    font-weight: 500;
+    font-weight: 600;
     letter-spacing: -1px;
     line-height: 28px;
 }
@@ -732,7 +735,7 @@ a {
 .is-main-contain .is-toggle-box .is-list-box li a span {
     display: inline-block;
     font-size: 16px;
-    font-weight: 500;
+    font-weight: 600;
     color: #999;
     line-height: 20px;
     max-width: calc(100% - 19px - 18px);
