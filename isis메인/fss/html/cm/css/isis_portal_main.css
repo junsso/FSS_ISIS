@@ -195,7 +195,7 @@ a {
     display: flex;
     flex-direction: column;
     gap: 5px;
-    width: 230px;
+    width: 248px;
     *float: left;
 }
 .is-main-contain .is-fv-system .is-title-box .desc{
@@ -227,7 +227,7 @@ a {
 .is-fv-list.ie {
     width: 1085px;
     margin-top: 8px;
-    margin-left: 30px;
+    margin-left: 19px;
     float: right;
 }
 .is-fv-list.ie .slide-container {
@@ -257,24 +257,25 @@ a {
 .is-fv-list.ie .slide {
     width: 205px;
     height: 65px;  
-    margin-left: 10px; 
+    padding-left: 10px; 
     display:inline-block;
     *display:inline; 
     zoom:1;
 }
 .is-fv-list.ie .slide:first-child {
-    margin-left: 0;
+    padding-left: 0;
 }
 .is-fv-list.ie .slide a {
     display: block;
     background: url('../images/img_slide_bg.png') no-repeat center / contain;
-    width: 205px;
+    width: 100%;
     height: 65px;
     padding: 24px 20px 0 15px;
     box-sizing: border-box;
     *background: url('../images/img_slide_bg.png') no-repeat center;
     *width: 170px;
     *height: 41px;
+    position: relative;
 }
 .is-fv-list.ie .slide a span {
     display: block;
@@ -288,16 +289,14 @@ a {
         this.firstChild.innerHTML = ""
     );
 }
-.is-fv-list.ie .slide a span::after,
-.is-fv-list.ie .slide a span .ie-before {
-    content: '';
+.is-fv-list.ie .slide a .arrow {
     display: block;
     background: url('../images/is_main_swiper_arrow_right_disabled.png') no-repeat center;
     width: 8px;
     height: 14px;
     position: absolute;
-    top: 1px;
-    right: 0;
+    top: 26px;
+    right: 20px;
 
 }
 .is-fv-list.ie .slide a span em {
@@ -543,10 +542,13 @@ a {
 }
 
 /* switch button IE7*/
+.is-main-contain .is-switch-box.ie .label-box {
+    position: relative;
+}
 .is-main-contain .is-switch-box.ie .label-box label {
     *display: block;
     *background: url('../images/img_switch_bg.png') no-repeat center;
-    *width: 145px;
+    *width: 154px;
     *height: 32px;
     *position: relative;
     *zoom: expression(
@@ -566,7 +568,17 @@ a {
     *color: #fff;
     *padding: 0;
 }
-.is-main-contain .is-switch-box.ie .label-box label::before,
+.is-main-contain .is-switch-box.ie .label-box label .ball{
+    *display: block;
+    *background: url('../images/img_switch_ball.png') no-repeat center;
+    background-size: contain;
+    *width: 22px;
+    *height: 22px;
+    *position: absolute;
+    *top: 5px;
+    *left: 4px;
+}
+/* .is-main-contain .is-switch-box.ie .label-box label::before,
 .is-main-contain .is-switch-box.ie .label-box label .ie-before {
     *content: '';
     *display: block;
@@ -578,18 +590,22 @@ a {
     *top: 5px;
     *left: 4px;
 
-}
+} */
 .is-main-contain .is-switch-box.ie .label-box .is-input.checked + label {
     *background-image: url('../images/img_switch_bg2.png');
 }
 .is-main-contain .is-switch-box.ie .label-box .is-input.checked + label span {
     *left: 8px;
 }
-.is-main-contain .is-switch-box.ie .label-box .is-input.checked + label::before,
+.is-main-contain .is-switch-box.ie .label-box .is-input.checked + label .ball{
+    *left: auto;
+    *right: 4px;
+} 
+/* .is-main-contain .is-switch-box.ie .label-box .is-input.checked + label::before,
 .is-main-contain .is-switch-box.ie .label-box .is-input.checked + label .ie-before {
     *left: auto;
     *right: 4px;
-}
+} */
 
 /* 토글 */
 .is-main-contain .is-contents-box { 
@@ -692,20 +708,19 @@ a {
 }
 .is-main-contain .is-toggle-box .is-list-box {
     padding-left: 0;
-    display: flex; 
-    gap: 10px;
     width: 100%;
-    flex-wrap: wrap;
 }
-.is-main-contain .is-toggle-box .is-list-box li {
-    width: calc(25% - 20px);
+.is-main-contain .is-toggle-box .is-list-box td {
+    min-width: 25%;
+    width: 25%;
+    vertical-align: top;
     position: relative;
-    padding: 7.5px 5px;
-    *width: 25%;
-    *float: left;
-    *margin-bottom: 5px;
+    padding: 7.5px 10px;
+    box-sizing: border-box;
+    float: left;
+    margin-bottom: 5px;
 }
-.is-main-contain .is-toggle-box .is-list-box li {
+/* .is-main-contain .is-toggle-box .is-list-box li {
     *zoom: expression(
        this.runtimeStyle['zoom'] = '1', 
        this.insertBefore(document.createElement("i"), 
@@ -723,16 +738,26 @@ a {
     position: absolute;
     top: 16px;
     left: 0;
-}
-.is-main-contain .is-toggle-box .is-list-box li a {
+} */
+.is-main-contain .is-toggle-box .is-list-box .sort{
+    display: block;
+    width: 4px;
+    height: 4px;
+    background-color: #666;
+    position: absolute;
+    top: 16px;
+    left: 0;
+} 
+.is-main-contain .is-toggle-box .is-list-box a {
     font-size: 16px;
     color: #999;
     font-weight: 500;
     display: flex;
     letter-spacing: -1px;
     cursor: pointer;
+    *display: block;
 }
-.is-main-contain .is-toggle-box .is-list-box li a span {
+.is-main-contain .is-toggle-box .is-list-box a span {
     display: inline-block;
     font-size: 16px;
     font-weight: 600;
@@ -742,7 +767,7 @@ a {
     padding-left: 6px;
     position: relative;
 }
-.is-main-contain .is-toggle-box .is-list-box li a span {
+.is-main-contain .is-toggle-box .is-list-box a span {
     *zoom: expression(
        this.runtimeStyle['zoom'] = '1', 
        this.insertBefore(document.createElement("i"), 
@@ -750,8 +775,8 @@ a {
        this.firstChild.innerHTML = ""
    );
 }
-.is-main-contain .is-toggle-box .is-list-box li a span::after,
-.is-main-contain .is-toggle-box .is-list-box li a span .ie-after {
+.is-main-contain .is-toggle-box .is-list-box a span::after,
+.is-main-contain .is-toggle-box .is-list-box a span .ie-after {
     content: '';
     display: inline-block;
     background: url('../images/is_main_open.png') no-repeat center;
@@ -761,17 +786,17 @@ a {
     top: 2px;
     right: -20px;
 }
-.is-main-contain .is-toggle-box .is-list-box li a:hover {
+.is-main-contain .is-toggle-box .is-list-box a:hover {
     /*color: #0080c6;*/
     font-weight: 700;
 }
 /* 시스템 권한이 있을때 */
-.is-main-contain .is-toggle-box .is-list-box li.authority a {
+.is-main-contain .is-toggle-box .is-list-box .authority a {
     color: #0080C6;
     padding-left: 18px;
     position: relative;
 }
-.is-main-contain .is-toggle-box .is-list-box li.authority a {
+/* .is-main-contain .is-toggle-box .is-list-box li.authority a {
     *zoom: expression(
         this.runtimeStyle['zoom'] = '1', 
         this.insertBefore(document.createElement("i"), 
@@ -789,9 +814,18 @@ a {
     position: absolute;
     top: 2px;
     left: 3px;
+} */
+.is-main-contain .is-toggle-box .is-list-box .authority a .security{
+    display: block;
+    background: url('../images/is_main_label.png') no-repeat center;
+    width: 18px;
+    height: 18px;
+    position: absolute;
+    top: 2px;
+    left: 3px;
 }
 /* 검색어 입력시 하이라이트 */
-.is-main-contain .is-toggle-box .is-list-box li .highlight {
+.is-main-contain .is-toggle-box .is-list-box .highlight {
     display: inline;
     background-color: #B4FAFF;
     width: auto;

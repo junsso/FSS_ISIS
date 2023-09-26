@@ -2,7 +2,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"
 <html lang="ko">
 	<head>
-		<meta charset="UTF-8">
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 		<meta http-equiv="imagetoolbar" content="no" />
         <meta http-equiv="X-UA-Compatible" content="IE=7" />
 		<meta name="title" content="ISIS 통합 관리 시스템"/> 
@@ -47,36 +47,36 @@
 							<ul class="slide-wrapper ">
                                 <li class="item active">
                                     <div class="slide">
-                                        <a href="#"><span><em>금융정보 종합분석1</em></span></a>
+                                        <a href="#"><span><em>금융정보 종합분석1</em></span><i class="arrow"></i></a>
                                     </div>
                                     <div class="slide">
-                                        <a href="#"><span><em>대부업감독</em></span></a>
+                                        <a href="#"><span><em>대부업감독</em></span><i class="arrow"></i></a>
                                     </div>
                                     <div class="slide">
-                                        <a href="#"><span><em>인허가관리</em></span></a>
+                                        <a href="#"><span><em>인허가관리</em></span><i class="arrow"></i></a>
                                     </div>
                                     <div class="slide">
-                                        <a href="#"><span><em>금융정보 종합분석 금융정보 종합분석 금융정보 종합분석4</em></span></a>
+                                        <a href="#"><span><em>금융정보 종합분석 금융정보 종합분석 금융정보 종합분석4</em></span><i class="arrow"></i></a>
                                     </div>
                                     <div class="slide">
-                                        <a href="#"><span><em>금융정보 종합분석 금융정보 종합분석5</em></span></a>
+                                        <a href="#"><span><em>금융정보 종합분석 금융정보 종합분석5</em></span><i class="arrow"></i></a>
                                     </div>
                                 </li>
                                 <li class="item">
                                     <div class="slide">
-                                        <a href="#"><span><em>금융정보 종합분석6</em></span></a>
+                                        <a href="#"><span><em>금융정보 종합분석6</em></span><i class="arrow"></i></a>
                                     </div>
                                     <div class="slide">
-                                        <a href="#"><span><em>금융정보 종합분석7</em></span></a>
+                                        <a href="#"><span><em>금융정보 종합분석7</em></span><i class="arrow"></i></a>
                                     </div>
                                     <div class="slide">
-                                        <a href="#"><span><em>금융정보 종합분석8</em></span></a>
+                                        <a href="#"><span><em>금융정보 종합분석8</em></span><i class="arrow"></i></a>
                                     </div>
                                     <div class="slide">
-                                        <a href="#"><span><em>금융정보 종합분석9</em></span></a>
+                                        <a href="#"><span><em>금융정보 종합분석9</em></span><i class="arrow"></i></a>
                                     </div>
                                     <div class="slide">
-                                        <a href="#"><span><em>금융정보 종합분석10</em></span></a>
+                                        <a href="#"><span><em>금융정보 종합분석10</em></span><i class="arrow"></i></a>
                                     </div>
                                 </li>
 							</ul>
@@ -115,16 +115,16 @@
 							</div>
 							<div class="is-form-wrap">
 								<h3 class="is-title">권한시스템</h3>
-								<div class="label-box">
+								<div class="label-box">									
 									<input role="switch" type="checkbox" class="is-input" id="switchLabel"/>
-									<label for="switchLabel"><span>권한 시스템만 보기</span></label>
+									<label for="switchLabel"><i class="ball"></i><span>권한 시스템만 보기</span></label>
 								</div>
 							</div>
 							<div class="is-form-wrap">
 								<h3 class="is-title">시스템 보기</h3>
 								<div class="label-box">
 									<input role="switch" type="checkbox" class="is-input" id="switchLabel2"/>
-									<label for="switchLabel2"><span>(구)시스템만 보기</span></label>
+									<label for="switchLabel2"><i class="ball"></i><span>(구)시스템만 보기</span></label>
 								</div>
 							</div>
                         </div>
@@ -142,18 +142,24 @@
 								<div class="is-toggle-contents">
 									<div class="is-inner">
 										<!-- 권한 있는 시스템은 authority를 사용 , 검색어 입력후 하이라이트는  <p class="highlight">검색어</p> 적용 -->
-										<ul class="is-list-box">
-											<li class="authority"><a href="#"><span><p class="highlight">금융</p>정보 종합분석</span></a></li>
-											<li class="authority"><a href="#"><span>대부업감독</span></a></li>
-											<li class="authority"><a href="#"><span>인허가관리</span></a></li>
-											<li><a href="#"><span>외환감독조사지원</span></a></li>
-											<li><a href="#"><span>회계감리</span></a></li>
-											<li><a href="#"><span>신용공여정보</span></a></li>
-											<li><a href="#"><span><p class="highlight">금융</p>산업조기경보</span></a></li>
-											<li><a href="#"><span>집합투자기구보고서조회</span></a></li>
-											<li><a href="#"><span>보험회사 책임준비금평가</span></a></li>
-											<li><a href="#"><span>은행신용리스크승인지원</span></a></li>
-										</ul>
+										<table class="is-list-box">
+											<tr>
+												<td class="authority"><i class="sort"></i><a href="#"><i class="security"></i><span><p class="highlight">금융</p>정보 종합분석</span></a></td>
+												<td><i class="sort"></i><a href="#"><i class="security"></i><span>인허가관리</span></a></td>
+												<td><i class="sort"></i><a href="#"><span>외환감독조사지원</span></a</td>
+												<td><i class="sort"></i><a href="#"><i class="security"></i><span><p class="highlight">금융</p>정보 종합분석</span></a></td>
+											</tr>
+											<tr>
+												<td><i class="sort"></i><a href="#"><i class="security"></i><span><p class="highlight">금융</p>정보 종합분석</span></a></td>
+												<td><i class="sort"></i><a href="#"><i class="security"></i><span><p class="highlight">금융</p>정보 종합분석</span></a></td>
+												<td><i class="sort"></i><a href="#"><i class="security"></i><span><p class="highlight">금융</p>정보 종합분석</span></a></td>
+												<td><i class="sort"></i><a href="#"><i class="security"></i><span>외환감독조사지원</span></a></td>
+											</tr>
+											<tr>
+												<td><i class="sort"></i><a href="#"><i class="security"></i><span><p class="highlight">금융</p>정보 종합분석</span></a></td>
+												<td><i class="sort"></i><a href="#"><i class="security"></i><span>회계감리</span></a></td>
+											</tr>
+										</table>
 										<!-- // -->
 									</div>
 								</div>
@@ -171,11 +177,14 @@
 								<div class="is-toggle-contents">
 									<div class="is-inner">
 										<!-- 권한 있는 시스템은 authority를 사용 , 검색어 입력후 하이라이트는  <p class="highlight">검색어</p> 적용 -->
-										<ul class="is-list-box">
-											<li class="authority highlight"><a href="#"><span><p class="highlight">금융</p>정보 종합분석</span></a></li>
-											<li><a href="#"><span>대부업감독</span></a></li>
-											<li><a href="#"><span>인허가관리</span></a></li>
-										</ul>
+										<table class="is-list-box">
+											<tr>
+												<td class="authority"><i class="sort"></i><a href="#"><i class="security"></i><span><p class="highlight">금융</p>정보 종합분석</span></a></td>
+												<td><i class="sort"></i><a href="#"><span>대부업감독</span></a></td>
+												<td><i class="sort"></i><a href="#"><span>인허가관리</span></a></td>
+												<td></td>
+											</tr>
+										</table>
 										<!-- // -->
 									</div>
 								</div>
@@ -193,18 +202,24 @@
 								<div class="is-toggle-contents">
 									<div class="is-inner">
 										<!-- 권한 있는 시스템은 authority를 사용 , 검색어 입력후 하이라이트는  <p class="highlight">검색어</p> 적용 -->
-										<ul class="is-list-box">
-											<li class="authority"><a href="#"><span><p class="highlight">금융</p>정보 종합분석</span></a></li>
-											<li class="authority"><a href="#"><span>대부업감독</span></a></li>
-											<li class="authority"><a href="#"><span>인허가관리</span></a></li>
-											<li><a href="#"><span>외환감독조사지원</span></a></li>
-											<li><a href="#"><span>회계감리</span></a></li>
-											<li><a href="#"><span>신용공여정보</span></a></li>
-											<li><a href="#"><span><p class="highlight">금융</p>산업조기경보</span></a></li>
-											<li><a href="#"><span>집합투자기구보고서조회</span></a></li>
-											<li><a href="#"><span>보험회사 책임준비금평가</span></a></li>
-											<li><a href="#"><span>은행신용리스크승인지원</span></a></li>
-										</ul>
+										<table class="is-list-box">
+											<tr>
+												<td class="authority"><i class="sort"></i><a href="#"><i class="security"></i><span><p class="highlight">금융</p>정보 종합분석</span></a></td>
+												<td class="authority"><i class="sort"></i><a href="#"><i class="security"></i><span>대부업감독</span></a></td>
+												<td class="authority"><i class="sort"></i><a href="#"><i class="security"></i><span>인허가관리</span></a></td>
+												<td><i class="sort"></i><a href="#"><span>외환감독조사지원</span></a></td>
+											</tr>
+											<tr>
+												<td><i class="sort"></i><a href="#"><span>회계감리</span></a></td>
+												<td><i class="sort"></i><a href="#"><span>신용공여정보</span></a></td>
+												<td><i class="sort"></i><a href="#"><span><p class="highlight">금융</p>산업조기경보</span></a></td>
+												<td><i class="sort"></i><a href="#"><span>집합투자기구보고서조회</span></a></td>
+											</tr>
+											<tr>
+												<td><i class="sort"></i><a href="#"><span>보험회사 책임준비금평가</span></a></td>
+												<td><i class="sort"></i><a href="#"><span>은행신용리스크승인지원</span></a></td>
+											</tr>
+										</table>
 										<!-- // -->
 									</div>
 								</div>
@@ -222,28 +237,38 @@
 								<div class="is-toggle-contents">
 									<div class="is-inner">
 										<!-- 권한 있는 시스템은 authority를 사용 , 검색어 입력후 하이라이트는  <p class="highlight">검색어</p> 적용 -->
-										<ul class="is-list-box">
-											<li class="authority"><a href="#"><span><p class="highlight">금융</p>정보 종합분석</span></a></li>
-											<li class="authority"><a href="#"><span>대부업감독</span></a></li>
-											<li class="authority"><a href="#"><span>인허가관리</span></a></li>
-											<li><a href="#"><span>외환감독조사지원</span></a></li>
-											<li><a href="#"><span>회계감리</span></a></li>
-											<li><a href="#"><span>신용공여정보</span></a></li>
-											<li><a href="#"><span><p class="highlight">금융</p>산업조기경보</span></a></li>
-											<li><a href="#"><span>집합투자기구보고서조회</span></a></li>
-											<li><a href="#"><span>보험회사 책임준비금평가</span></a></li>
-											<li><a href="#"><span>은행신용리스크승인지원</span></a></li>
-											<li class="authority"><a href="#"><span><p class="highlight">금융</p>정보 종합분석</span></a></li>
-											<li class="authority"><a href="#"><span>대부업감독</span></a></li>
-											<li class="authority"><a href="#"><span>인허가관리</span></a></li>
-											<li><a href="#"><span>외환감독조사지원</span></a></li>
-											<li><a href="#"><span>회계감리</span></a></li>
-											<li><a href="#"><span>신용공여정보</span></a></li>
-											<li><a href="#"><span><p class="highlight">금융</p>산업조기경보</span></a></li>
-											<li><a href="#"><span>집합투자기구보고서조회</span></a></li>
-											<li><a href="#"><span>보험회사 책임준비금평가</span></a></li>
-											<li><a href="#"><span>은행신용리스크승인지원</span></a></li>
-										</ul>
+										<table class="is-list-box">
+											<tr>
+												<td class="authority"><i class="sort"></i><a href="#"><i class="security"></i><span><p class="highlight">금융</p>정보 종합분석</span></a></td>
+												<td class="authority"><i class="sort"></i><a href="#"><i class="security"></i><span>대부업감독</span></a></td>
+												<td class="authority"><i class="sort"></i><a href="#"><i class="security"></i><span>인허가관리</span></a></td>
+												<td><i class="sort"></i><a href="#"><span>외환감독조사지원</span></a></td>
+											</tr>
+											<tr>
+												<td><i class="sort"></i><a href="#"><span>회계감리</span></a></td>
+												<td><i class="sort"></i><a href="#"><span>신용공여정보</span></a></td>
+												<td><i class="sort"></i><a href="#"><span><p class="highlight">금융</p>산업조기경보</span></a></td>
+												<td><i class="sort"></i><a href="#"><span>집합투자기구보고서조회</span></a></td>
+											</tr>
+											<tr>
+												<td><i class="sort"></i><a href="#"><span>보험회사 책임준비금평가</span></a></td>
+												<td><i class="sort"></i><a href="#"><span>은행신용리스크승인지원</span></a></td>
+												<td class="authority"><i class="sort"></i><a href="#"><i class="security"></i><span><p class="highlight">금융</p>정보 종합분석</span></a></td>
+												<td class="authority"><i class="sort"></i><a href="#"><i class="security"></i><span>대부업감독</span></a></td>
+											</tr>
+											<tr>
+												<td class="authority"><i class="sort"></i><a href="#"><i class="security"></i><span>인허가관리</span></a></td>
+												<td><i class="sort"></i><a href="#"><span>외환감독조사지원</span></a></td>
+												<td><i class="sort"></i><a href="#"><span>회계감리</span></a></td>
+												<td><i class="sort"></i><a href="#"><span>신용공여정보</span></a></td>
+											</tr>
+											<tr>
+												<td><i class="sort"></i><a href="#"><span><p class="highlight">금융</p>산업조기경보</span></a></td>
+												<td><i class="sort"></i><a href="#"><span>집합투자기구보고서조회</span></a></td>
+												<td><i class="sort"></i><a href="#"><span>보험회사 책임준비금평가</span></a></td>
+												<td><i class="sort"></i><a href="#"><span>은행신용리스크승인지원</span></a></td>
+											</tr>
+										</table>
 										<!-- // -->
 									</div>
 								</div>
