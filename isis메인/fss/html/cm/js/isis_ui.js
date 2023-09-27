@@ -83,8 +83,7 @@ $(document).ready(function(){
     });
 
     //자주찾는 업무 시스템 슬라이드
-    console.clear();
-
+    //console.clear();
     $('.is-fv-system .page-btns .page-btn').click(function(){
         var $clicked = $(this);
         var $slider = $(this).closest('.is-fv-system').find('.slide-container');
@@ -120,10 +119,6 @@ $(document).ready(function(){
         updateCurrentPageNumber();
     });
 
-    // setInterval(function(){
-    //   $('.is-fv-system .page-btns .next-btn').click();
-    // }, 8000);
-
     // 슬라이더 페이지 번호 지정
     function pageNumber__Init(){
         // 전채 배너 페이지 갯수 세팅해서 .slider 에 'data-slide-total' 넣기
@@ -149,5 +144,5 @@ $(document).ready(function(){
         $('.is-fv-system .page-btns .page-no .current-slide-no').html(currentSlideNo);
     };
 
-    updateCurrentPageNumber()
+    updateCurrentPageNumber();
 }) 
