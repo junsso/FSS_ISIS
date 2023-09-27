@@ -595,7 +595,7 @@ a {
     *background-image: url('../images/img_switch_bg2.png');
 }
 .is-main-contain .is-switch-box.ie .label-box .is-input.checked + label span {
-    *left: 8px;
+    *left: 12px;
 }
 .is-main-contain .is-switch-box.ie .label-box .is-input.checked + label .ball{
     *left: auto;
